@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources>
+
+
+
+    <color name="light"> @color/bootstrap_dropdown_divider </color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey"> @color/bootstrap_gray </color>
+    <color name="blue">@color/bootstrap_brand_info</color>
+    <color name="red"> @color/bootstrap_brand_danger </color>
+    <color name="black">#000000</color>
+    <color name="darkgray">#2B2B2E</color>
+    <color name="orange"> @android:color/holo_orange_dark </color>
+
+    <!-- dark theme ui -->
+    <color name="bg_general"> #232C3D </color>
+    <color name="bg_scoring_popup">#D806090D</color> <!-- 75% opacity -->
+    <color name="bg_clear_confirm_popup">#2F3A4F</color>
+
+    <color name="electric"> #19ABF2 </color>
+    <color name="banana"> #FFD966 </color>
+    <color name="fire"> #F72855 </color>
+    <color name="juicy_orange"> #f3a183</color>
+    <color name="melon"> #F48862 </color>
+    <color name="rust"> #C25027 </color>
+    <color name="clay"> #784330 </color>
+    <color name="cocoa"> #423029 </color>
+    <color name="ice"> #F2F2F2 </color>
+    <color name="cloud"> #DADEE6 </color>
+    <color name="sky"> #8593B0 </color>
+    <color name="ocean"> #525F78 </color>
+    <color name="night"> #2F3A4F </color>
+    <color name="denim"> #232C3D </color>
+    <color name="charcoal"> #06090D </color>
+
+    <color name="dark_red">#8a0303</color>
+
+    <color name="button_disabled"> #2F3A4F </color>
+
+    <color name="heading_active"> #828FAC </color>
+    <color name="heading_disabled"> #2F3A4F </color>
+
+    <color name="text_default"> #C5C9D2 </color>
+    <color name="text_disabled"> #505A61 </color>
+
+    <color name="switch_track_active"> #784330 </color>
+    <color name="switch_thumb_disabled"> #525F78 </color>
+
+    <color name="border_warning"> #F72855 </color>
+
+
+
+    <!-- for settings save button -->
+    <color name="savetextdefault">#404344</color>
+    <color name="savedefault">#5A5D5E</color>
+    <color name="saveactive">#84C43C</color>
+
+    <!-- theme change -->
+    <color name="darkerblue">#292E52</color>
+    <color name="darkblue">#232C5A</color>
+    <color name="lightblue">#7186B3</color>
+    <color name="lightpurple">#7C7EAF</color>
+    <color name="disabledlightpurple">#5D5F86</color>
+    <color name="scarletorange">#FA5347</color>
+    <color name="lightscarletorange">#D66C63</color>
+
+    <!-- GenUtils -->
+    <color name="genutils_yellow">#f8e71c</color>
+    <color name="genutils_lightYellow">#ffffd9</color>
+    <color name="genutils_orange">#ff9800</color>
+    <color name="genutils_lightOrange">#ddac6b</color>
+    <color name="genutils_red">#5b1818</color>
+    <color name="genutils_black">#1e1e1e</color>
+    <color name="genutils_green">#2dc067</color>
+
+</resources>

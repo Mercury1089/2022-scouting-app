@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_general">
+
+    <fragment
+        android:id="@+id/Auton"
+        android:name="com.mercury1089.scoutingapp2019.Auton"
+        android:layout_width="599dp"
+        android:layout_height="893dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout="@layout/fragment_auton" />
+
+    <fragment
+        android:id="@+id/Teleop"
+        android:name="com.mercury1089.scoutingapp2019.Teleop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout="@layout/fragment_teleop" />
+
+    <fragment
+        android:id="@+id/Climb"
+        android:name="com.mercury1089.scoutingapp2019.Climb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout="@layout/fragment_climb" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TitleBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#1D664B"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/bg_general"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/button_states"
+        app:tabTextColor="@color/ice">
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/autonTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_left_states"
+            android:text="@string/Auton"
+            app:tabBackground="@drawable/toggle_left_states" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/teleopTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Teleop" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/climbTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_right_states"
+            android:text="@string/Climb"
+            app:tabBackground="@drawable/toggle_right_states" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Auton"
+        app:layout_constraintStart_toStartOf="@+id/Auton"
+        app:layout_constraintTop_toBottomOf="@+id/tabs">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

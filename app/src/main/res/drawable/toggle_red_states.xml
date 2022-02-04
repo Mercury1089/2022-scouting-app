@@ -1,0 +1,5 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true" android:state_selected="true"
+        android:drawable="@drawable/toggle_red_active" />
+    <item android:drawable="@drawable/toggle_right_default" />
+</selector>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScoredPopupWindow"
+    android:layout_width="@dimen/scoring_popup_width"
+    android:layout_height="@dimen/scoring_popup_height"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Contents"
+        android:layout_width="@dimen/scoring_popup_width"
+        android:layout_height="370dp"
+        android:background="@color/bg_scoring_popup"
+        android:padding="@dimen/padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/OuterID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="38dp"
+            android:text="@string/OuterPortID"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/label_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/OuterIncrementDecrementContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            app:layout_constraintBottom_toBottomOf="@+id/OuterID"
+            app:layout_constraintStart_toEndOf="@+id/OuterID"
+            app:layout_constraintTop_toTopOf="@+id/OuterID">
+
+
+            <ImageButton
+                android:id="@+id/OuterDecrement"
+                android:layout_width="@dimen/square_toggle_length"
+                android:layout_height="@dimen/square_toggle_length"
+                android:background="@drawable/toggle_left_states"
+                android:enabled="true"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:src="@drawable/minus_states"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/OuterIncrement"
+                android:layout_width="@dimen/square_toggle_length"
+                android:layout_height="@dimen/square_toggle_length"
+                android:background="@drawable/toggle_right_states"
+                android:enabled="true"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:src="@drawable/plus_states"
+                tools:ignore="ContentDescription" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/OuterScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/DefaultValue"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/instruction_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/OuterID"
+            app:layout_constraintStart_toEndOf="@+id/OuterIncrementDecrementContainer"
+            app:layout_constraintTop_toTopOf="@+id/OuterID" />
+
+        <TextView
+            android:id="@+id/InnerID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/InnerPortID"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/label_text_size"
+            app:layout_constraintStart_toStartOf="@id/OuterID"
+            app:layout_constraintTop_toBottomOf="@id/OuterID" />
+
+        <RadioGroup
+            android:id="@+id/InnerIncrementDecrementContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            app:layout_constraintBottom_toBottomOf="@+id/InnerID"
+            app:layout_constraintStart_toStartOf="@+id/OuterIncrementDecrementContainer"
+            app:layout_constraintTop_toTopOf="@+id/InnerID">
+
+
+            <ImageButton
+                android:id="@+id/InnerDecrement"
+                android:layout_width="@dimen/square_toggle_length"
+                android:layout_height="@dimen/square_toggle_length"
+                android:background="@drawable/toggle_left_states"
+                android:enabled="true"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:src="@drawable/minus_states"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/InnerIncrement"
+                android:layout_width="@dimen/square_toggle_length"
+                android:layout_height="@dimen/square_toggle_length"
+                android:background="@drawable/toggle_right_states"
+                android:enabled="true"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:src="@drawable/plus_states"
+                tools:ignore="ContentDescription" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/InnerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/DefaultValue"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/instruction_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/InnerID"
+            app:layout_constraintStart_toEndOf="@+id/InnerIncrementDecrementContainer"
+            app:layout_constraintTop_toTopOf="@+id/InnerID" />
+
+        <RadioGroup
+            android:id="@+id/LowerIncrementDecrementContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            app:layout_constraintBottom_toBottomOf="@+id/LowerID"
+            app:layout_constraintStart_toStartOf="@+id/InnerIncrementDecrementContainer"
+            app:layout_constraintTop_toTopOf="@+id/LowerID">
+
+
+            <ImageButton
+                android:id="@+id/LowerDecrement"
+                android:layout_width="@dimen/square_toggle_length"
+                android:layout_height="@dimen/square_toggle_length"
+                android:background="@drawable/toggle_left_states"
+                android:enabled="true"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:src="@drawable/minus_states"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/LowerIncrement"
+                android:layout_width="@dimen/square_toggle_length"
+                android:layout_height="@dimen/square_toggle_length"
+                android:background="@drawable/toggle_right_states"
+                android:enabled="true"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:src="@drawable/plus_states"
+                tools:ignore="ContentDescription" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/LowerID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/LowerPortID"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/label_text_size"
+            app:layout_constraintStart_toStartOf="@+id/InnerID"
+            app:layout_constraintTop_toBottomOf="@+id/InnerID" />
+
+        <TextView
+            android:id="@+id/LowerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultValue"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/instruction_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/LowerID"
+            app:layout_constraintStart_toStartOf="@+id/InnerScore"
+            app:layout_constraintTop_toTopOf="@+id/LowerID" />
+
+        <Button
+            android:id="@+id/DoneButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_large_active"
+            android:text="@string/Done"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LowerIncrementDecrementContainer" />
+
+        <Button
+            android:id="@+id/CancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:text="@string/Cancel"
+            android:textColor="@color/bootstrap_brand_secondary_border"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DoneButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/carat"
+        android:layout_width="@dimen/carat_width"
+        android:layout_height="@dimen/carat_height"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/carat"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Contents" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

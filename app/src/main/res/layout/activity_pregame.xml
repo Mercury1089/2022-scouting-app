@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_general"
+    android:focusableInTouchMode="true"
+    android:padding="@dimen/padding"
+    tools:context=".PregameActivity">
+
+
+    <TextView
+        android:id="@+id/IDSetupDirections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/SetupDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDSetup"
+        app:layout_constraintTop_toBottomOf="@+id/IDSetup" />
+
+    <EditText
+        android:id="@+id/ScouterNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:hint="@string/HINT_NAME"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:tag="ScouterName"
+        android:textColor="@color/charcoal"
+        app:layout_constraintStart_toStartOf="@+id/IDScouterName"
+        app:layout_constraintTop_toBottomOf="@+id/IDScouterName" />
+
+    <TextView
+        android:id="@+id/IDScouterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/ScouterNameID"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/IDSetupDirections"
+        app:layout_constraintTop_toBottomOf="@+id/IDSetupDirections" />
+
+    <Switch
+        android:id="@+id/NoShowSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="46dp"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toEndOf="@+id/TeamNumberInput"
+        app:layout_constraintTop_toTopOf="@+id/TeamNumberInput" />
+
+    <TextView
+        android:id="@+id/IDMatchNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/MatchNumberID"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintStart_toStartOf="@+id/ScouterNameInput"
+        app:layout_constraintTop_toBottomOf="@+id/ScouterNameInput" />
+
+    <TextView
+        android:id="@+id/IDAlliancePartners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/AlliancePartnersID"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintStart_toStartOf="@+id/TeamNumberInput"
+        app:layout_constraintTop_toBottomOf="@+id/TeamNumberInput" />
+
+    <EditText
+        android:id="@+id/MatchNumberInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:hint="@string/HINT_MATCH_NUMBER"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="3"
+        android:tag="MatchNumber"
+        android:textColor="@color/charcoal"
+        app:layout_constraintStart_toStartOf="@+id/IDMatchNumber"
+        app:layout_constraintTop_toBottomOf="@+id/IDMatchNumber" />
+
+    <TextView
+        android:id="@+id/IDTeamNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/TeamNumberID"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintStart_toStartOf="@+id/MatchNumberInput"
+        app:layout_constraintTop_toBottomOf="@+id/MatchNumberInput" />
+
+    <EditText
+        android:id="@+id/FirstAlliancePartnerInput"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:hint="@string/HINT_TEAM_NUMBER"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="4"
+        android:nextFocusDown="@+id/SecondAlliancePartnerInput"
+        android:tag="Alliance1"
+        android:textColor="@color/charcoal"
+        app:layout_constraintStart_toStartOf="@+id/IDAlliancePartners"
+        app:layout_constraintTop_toBottomOf="@+id/IDAlliancePartners" />
+
+    <EditText
+        android:id="@+id/TeamNumberInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:hint="@string/HINT_TEAM_NUMBER"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="4"
+        android:tag="TeamNumber"
+        android:textColor="@color/charcoal"
+        app:layout_constraintStart_toStartOf="@+id/IDTeamNumber"
+        app:layout_constraintTop_toBottomOf="@+id/IDTeamNumber" />
+
+    <EditText
+        android:id="@+id/SecondAlliancePartnerInput"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:ems="10"
+        android:fontFamily="@font/open_sans"
+        android:hint="@string/HINT_TEAM_NUMBER"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="4"
+        android:tag="Alliance2"
+        android:textColor="@color/charcoal"
+        app:layout_constraintStart_toEndOf="@+id/FirstAlliancePartnerInput"
+        app:layout_constraintTop_toBottomOf="@+id/IDAlliancePartners" />
+
+    <TextView
+        android:id="@+id/IDNoShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/NoShow"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/NoShowSwitch"
+        app:layout_constraintStart_toEndOf="@+id/NoShowSwitch"
+        app:layout_constraintTop_toTopOf="@+id/NoShowSwitch" />
+
+    <TextView
+        android:id="@+id/IDAllianceColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/AllianceColorID"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/IDAlliancePartners"
+        app:layout_constraintStart_toStartOf="@+id/NoShowSwitch"
+        app:layout_constraintTop_toTopOf="@+id/IDAlliancePartners" />
+
+    <RadioGroup
+        android:id="@+id/MissedToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintStart_toStartOf="@+id/IDAllianceColor"
+        app:layout_constraintTop_toBottomOf="@+id/IDAllianceColor">
+
+        <Button
+            android:id="@+id/BlueButton"
+            android:layout_width="@dimen/alliance_color_width"
+            android:layout_height="@dimen/button_height"
+            android:background="@drawable/toggle_blue_states"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:text="@string/Blue"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/RedButton"
+            android:layout_width="@dimen/alliance_color_width"
+            android:layout_height="@dimen/button_height"
+            android:background="@drawable/toggle_red_states"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:text="@string/Red"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            tools:visibility="visible" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/IDSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/SetupTitle"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toStartOf="@+id/SettingsButton"
+        app:layout_constraintTop_toBottomOf="@+id/SettingsButton" />
+
+    <TextView
+        android:id="@+id/IDStartingPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/StartingPositionTitle"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toStartOf="@+id/FirstAlliancePartnerInput"
+        app:layout_constraintTop_toBottomOf="@+id/FirstAlliancePartnerInput" />
+
+    <TextView
+        android:id="@+id/IDStartingPositionDirections"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/StartingPositionDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDStartingPosition"
+        app:layout_constraintTop_toBottomOf="@+id/IDStartingPosition" />
+
+    <TextView
+        android:id="@+id/IDStartDirections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/StartButtonDirections"
+        android:textColor="@color/banana"
+        android:textSize="@dimen/label_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/StartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ClearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/button_states"
+        android:drawableStart="@drawable/clear_states"
+        android:drawablePadding="@dimen/bootstrap_alert_paddings"
+        android:enabled="false"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/Clear"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintStart_toEndOf="@+id/SettingsButton"
+        app:layout_constraintTop_toTopOf="@+id/SettingsButton" />
+
+    <Button
+        android:id="@+id/StartButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_start_states"
+        android:drawableEnd="@drawable/rocket_states"
+        android:enabled="false"
+        android:fontFamily="@font/open_sans"
+        android:paddingLeft="234dp"
+        android:paddingRight="234dp"
+        android:text="@string/Start"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/SettingsButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_states"
+        android:src="@drawable/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/PlayingField"
+        android:layout_width="446dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/playing_field_states"
+        app:layout_constraintEnd_toStartOf="@+id/StartButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/StartButton"
+        app:layout_constraintTop_toBottomOf="@+id/IDStartingPositionDirections" />
+
+    <!-- Left field side buttons -->
+
+    <Button
+        android:id="@+id/LR2"
+        android:layout_width="105dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="9dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/left_pos_padding"
+        android:tag="LR2"
+        app:layout_constraintStart_toStartOf="@+id/PlayingField"
+        app:layout_constraintTop_toTopOf="@+id/PlayingField" />
+
+
+    <Button
+        android:id="@+id/LR1"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/left_pos_padding"
+        android:tag="LR1"
+        app:layout_constraintEnd_toEndOf="@+id/LR2"
+        app:layout_constraintStart_toStartOf="@+id/LR2"
+        app:layout_constraintTop_toBottomOf="@+id/LR2" />
+
+    <Button
+        android:id="@+id/LC"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/left_pos_padding"
+        android:tag="LC"
+        app:layout_constraintEnd_toEndOf="@+id/LR1"
+        app:layout_constraintStart_toStartOf="@+id/LR1"
+        app:layout_constraintTop_toBottomOf="@+id/LR1" />
+
+    <Button
+        android:id="@+id/LL1"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/left_pos_padding"
+        android:tag="LL1"
+        app:layout_constraintEnd_toEndOf="@+id/LC"
+        app:layout_constraintStart_toStartOf="@+id/LC"
+        app:layout_constraintTop_toBottomOf="@+id/LC" />
+
+    <Button
+        android:id="@+id/LL2"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/left_pos_padding"
+        android:tag="LL2"
+        app:layout_constraintEnd_toEndOf="@+id/LL1"
+        app:layout_constraintStart_toStartOf="@+id/LL1"
+        app:layout_constraintTop_toBottomOf="@+id/LL1" />
+
+    <!-- Right field side buttons -->
+
+    <Button
+        android:id="@+id/RL2"
+        android:layout_width="105dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="35dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/right_pos_padding"
+        android:tag="RL2"
+        app:layout_constraintEnd_toEndOf="@+id/PlayingField"
+        app:layout_constraintTop_toTopOf="@+id/PlayingField" />
+
+    <Button
+        android:id="@+id/RL1"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/right_pos_padding"
+        android:tag="RL1"
+        app:layout_constraintEnd_toEndOf="@+id/RL2"
+        app:layout_constraintStart_toStartOf="@+id/RL2"
+        app:layout_constraintTop_toBottomOf="@+id/RL2" />
+
+    <Button
+        android:id="@+id/RC"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/right_pos_padding"
+        android:tag="RC"
+        app:layout_constraintEnd_toEndOf="@+id/RL1"
+        app:layout_constraintStart_toStartOf="@+id/RL1"
+        app:layout_constraintTop_toBottomOf="@+id/RL1" />
+
+    <Button
+        android:id="@+id/RR1"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/right_pos_padding"
+        android:tag="RR1"
+        app:layout_constraintEnd_toEndOf="@+id/RC"
+        app:layout_constraintStart_toStartOf="@+id/RC"
+        app:layout_constraintTop_toBottomOf="@+id/RC" />
+
+    <Button
+        android:id="@+id/RR2"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:onClick="fieldPosClicked"
+        android:paddingRight="@dimen/right_pos_padding"
+        android:tag="RR2"
+        app:layout_constraintEnd_toEndOf="@+id/RR1"
+        app:layout_constraintStart_toStartOf="@+id/RR1"
+        app:layout_constraintTop_toBottomOf="@+id/RR1" />
+
+    <ImageView
+        android:id="@+id/SlackCenter"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/bg_general"
+        android:foregroundTint="@color/bg_general"
+        android:rotation="-4.505"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/PlayingField"
+        app:layout_constraintEnd_toEndOf="@+id/PlayingField"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/PlayingField"
+        app:layout_constraintTop_toTopOf="@+id/PlayingField"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/slack" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

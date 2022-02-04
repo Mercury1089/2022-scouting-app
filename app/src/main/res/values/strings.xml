@@ -1,0 +1,151 @@
+<resources>
+
+<!-- References -->
+    <!-- space = &#32; -->
+    <!-- new line = \n -->
+
+
+<!-- Headings -->
+    <!-- Titles -->
+        <string name="app_name">Scouting App 2020</string>
+        <string name="SettingsTitle">SETTINGS</string>
+        <string name="SetupTitle">SETUP</string>
+        <string name="StartingPositionTitle">STARTING POSITION</string>
+        <string name="ClearTitle">CLEAR THIS SCREEN?</string>
+        <string name="ExitTitle">EXIT</string>
+        <string name="PossessionTitle">POSSESSION</string>
+        <string name="ScoringTitle">SCORING</string>
+        <string name="MiscTitle">MISC</string>
+        <string name="ControlPanelTitle">CONTROL PANEL</string>
+        <string name="ClimbTitle">CLIMB</string>
+        <string name="EndGameTitle">ENDGAME</string>
+        <string name="QRCodeTitle">DID YOU SCAN YOUR QR CODE?</string>
+
+    <!-- Tabs -->
+        <string name="Setup">Setup</string>
+        <string name="Auton">Auton</string>
+        <string name="Teleop">Teleop</string>
+        <string name="Climb">Climb</string>
+
+
+<!-- PregameActivity -->
+    <!-- ID Fields -->
+        <string name="ScouterNameID">SCOUTER NAME:</string>
+        <string name="MatchNumberID">MATCH #:</string>
+        <string name="TeamNumberID">TEAM #:</string>
+        <string name="AlliancePartnersID">ALLIANCE PARTNERS:</string>
+        <string name="AllianceColorID">ALLIANCE COLOR:</string>
+
+    <!-- Directions -->
+        <string name="SetupDirections">Complete the fields below before the start of each match.</string>
+        <string name="StartButtonDirections">Wait to press START until you hear the charge sound!</string>
+        <string name="StartingPositionDirections">Tap on the field diagram below to mark the robot’s starting position.</string>
+
+    <!-- Button Texts -->
+        <string name="Blue">BLUE</string>
+        <string name="Red">RED</string>
+        <string name="NoShow">NO SHOW</string>
+        <string name="Clear">CLEAR</string>
+        <string name="Start">START</string>
+        <string name="GenerateQRCode">GENERATE QR CODE</string>
+
+
+<!-- SettingsActivity -->
+    <!-- Warning -->
+        <string name="SettingsWarning">FOR STRATEGY COMMITTEE MEMBERS ONLY</string>
+    <!-- ID Fields -->
+        <string name="ResetID">RESET APP</string>
+        <string name="GoBack">BACK</string>
+        <string name="QRCache">QR Code Cache</string>
+
+    <!-- Directions -->
+        <string name="ResetDirections">If a QR code fails to generate or the app is displaying persistent and incorrect active states, tap the button below.</string>
+
+    <!-- Button Texts -->
+        <string name="ResetButton">RESET ALL VARIABLES</string>
+        <string name="QRCacheItem">Team Number: %1$s &#160;&#160;&#160;&#160;&#160;&#160; Match Number: %2$s</string>
+
+
+<!-- MatchActivity -->
+    <!-- Universal -->
+        <string name="DefaultValue">000</string>
+        <string name="Exit">Exit</string>
+        <string name="Done">DONE</string>
+        <string name="Cancel">CANCEL</string>
+        <string name="Save">Save</string>
+
+    <!-- Exit Popup -->
+        <string name="ExitWarning">Are you sure that you want to leave? All data will be lost!</string>
+
+    <!-- Auton -->
+        <string name="AutonSeconds">AUTON SECONDS REMAINING</string>
+        <string name="PossessionDirections">Tap the + and - buttons to increase or decrease the counter for each option.</string>
+        <string name="PickedUp">PICKED UP</string>
+        <string name="Dropped">DROPPED</string>
+        <string name="Plus">+</string>
+        <string name="Minus">-</string>
+        <string name="ScoringDirections">Tap on either button to open additional options. In the option menu, tap as many + or - buttons as necessary to record scored and missed power cells.</string>
+        <string name="Scored">SCORED</string>
+        <string name="Missed">MISSED</string>
+        <string name="MiscDirections">Tap on the toggle to mark if/when each action occurs.</string>
+        <string name="CrossedLine">Crossed Initiation Line</string>
+        <string name="FellOver">Fell Over</string>
+        <string name="TeleopWarning">Teleop is starting soon...</string>
+        <string name="TeleopError">Switch to teleop as soon as possible!</string>
+        <string name="TeleopNext">NEXT: TELEOP</string>
+
+    <!-- Teleop -->
+        <string name="ControlPanelDirections">Tap on the toggle to mark if/when the robot activates either stage.</string>
+        <string name="Stage2">Stage 2</string>
+        <string name="Stage3">Stage 3</string>
+        <string name="FellOverOrDied">Fell over/Died</string>
+        <string name="ClimbNext">NEXT: CLIMBING AND QR</string>
+
+    <!-- Climb -->
+        <string name="EndgameDirections">Tap on the toggle to mark if the action occurs.</string>
+        <string name="Climbed">Climbed</string>
+        <string name="Rung">Leveled the rung</string>
+        <string name="Parked">Parked in the rendezvous</string>
+
+
+<!-- Display Popups -->
+    <!-- Loading -->
+        <string name="PleaseWait">Please Wait&#8230;\nGenerating QR Code&#8230;</string>
+
+    <!-- QR Popup -->
+        <string name="GenerateQRID">GENERATE QR CODE?</string>
+        <string name="GenerateQRDescription">Are you sure you want to generate a QR code? Once you generate a code you cannot return to the match to make changes.</string>
+
+    <!-- QR Popup -->
+        <string name="QRCodeID">Here is your QR Code:</string>
+        <string name="QRCode">QR Code</string>
+        <string name="QRWarningDirections">Are you sure you want to generate a QR code? Once you generate a code you cannot return to the match to make changes.</string>
+        <string name="QRExitDirections">Returning to the Setup screen will erase this QR code and all of your data from this match.</string>
+
+    <!-- QR Popup -->
+        <string name="SetupNextMatchID">DID YOU SCAN YOUR QR CODE?</string>
+        <string name="SetupNextMatchDirections">Returning to the Setup screen will erase this QR code and all of your data from this match.</string>
+        <string name="SetupNextMatch">SET UP NEXT MATCH</string>
+
+    <!-- Scored -->
+        <string name="OuterPortID">OUTER</string>
+        <string name="InnerPortID">INNER</string>
+
+    <!-- Missed -->
+        <string name="UpperPortID">HIGH\n(OUTER/INNER)</string>
+        <string name="LowerPortID">LOWER</string>
+
+    <!-- Clear -->
+        <string name="ClearDirections">Are you sure you want to clear all data on the setup screen?</string>
+
+    <!-- Password -->
+        <string name="IDPassword">PASSWORD</string>
+        <string name="IDPasswordInstructions">Please enter a password to access the Settings screen</string>
+        <string name="IDPasswordSettings">PASSWORD SETTINGS</string>
+        <string name="IDPasswordRequiredConfirm">Password protect app settings?</string>
+
+    <!-- Button Text -->
+        <string name="Recharge">Recharge for Next Match</string>
+        <string name="Scanned">Scanned?</string>
+        <string name="NextMatch">SET UP NEXT MATCH</string>
+</resources>

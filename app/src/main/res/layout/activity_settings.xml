@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_general"
+    tools:context=".SettingsActivity"
+    tools:ignore="ExtraText">
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_states"
+        android:drawableLeft="@drawable/left"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/GoBack"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SettingsHeader" />
+
+    <Button
+        android:id="@+id/PasswordSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_states"
+        android:fontFamily="@font/open_sans"
+        android:text="Password Settings"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintStart_toEndOf="@id/BackButton"
+        app:layout_constraintEnd_toStartOf="@id/MuteButton"
+        app:layout_constraintTop_toBottomOf="@+id/SettingsHeader" />
+
+    <Button
+        android:id="@+id/LocalStorageResetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_states"
+        android:drawableStart="@drawable/trash_states"
+        android:drawablePadding="@dimen/bootstrap_alert_paddings"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/ResetButton"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDSettingsDirections"
+        app:layout_constraintTop_toBottomOf="@+id/IDSettingsDirections" />
+
+    <Button
+        android:id="@+id/ClearQRCodesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_states"
+        android:drawableStart="@drawable/trash_states"
+        android:drawablePadding="@dimen/bootstrap_alert_paddings"
+        android:fontFamily="@font/open_sans"
+        android:text="Clear QR Codes"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintEnd_toEndOf="@+id/IDSettingsDirections"
+        app:layout_constraintTop_toBottomOf="@+id/IDSettingsDirections" />
+
+    <TextView
+        android:id="@+id/IDSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/ResetID"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toStartOf="@+id/BackButton"
+        app:layout_constraintTop_toBottomOf="@+id/BackButton" />
+
+    <TextView
+        android:id="@+id/IDSettingsDirections"
+        android:layout_width="541dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/ResetDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/IDSettings"
+        app:layout_constraintTop_toBottomOf="@+id/IDSettings" />
+
+    <TextView
+        android:id="@+id/SettingsHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/banana"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:gravity="center_horizontal"
+        android:paddingTop="28dp"
+        android:paddingBottom="28dp"
+        android:text="@string/SettingsWarning"
+        android:textColor="@color/night"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/MuteButton"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/button_states"
+        android:fontFamily="@font/open_sans"
+        android:scaleType="fitXY"
+        android:src="@drawable/mute"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BackButton"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/QRCache"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LocalStorageResetButton" />
+
+    <ListView
+        android:id="@+id/QRCodeListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/darkgray"
+        android:divider="@null"
+        android:paddingTop="15dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

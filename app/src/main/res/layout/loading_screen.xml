@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="500dp"
+    android:layout_height="500dp"
+    android:background="@color/black"
+    android:minWidth="400dp"
+    android:minHeight="410dp"
+    android:orientation="vertical"
+    android:padding="@dimen/padding">
+
+    <com.mercury1089.scoutingapp2019.LoadingGIFVIew
+        android:id="@+id/loading_gif"
+        android:layout_width="416dp"
+        android:layout_height="355dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/open_sans_italic"
+        android:gravity="center"
+        android:text="@string/PleaseWait"
+        android:textColor="@color/ice"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/BottomBorder"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/TopBorder"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/ocean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/RightBound"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/LeftBound"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

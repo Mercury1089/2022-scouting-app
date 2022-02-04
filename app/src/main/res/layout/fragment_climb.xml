@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="895dp"
+    android:background="@color/bg_general"
+    android:padding="@dimen/padding"
+    tools:context=".MatchActivity"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/IDParked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/Parked"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/ParkedSwitch"
+        app:layout_constraintStart_toEndOf="@+id/ParkedSwitch"
+        app:layout_constraintTop_toTopOf="@+id/ParkedSwitch" />
+
+    <TextView
+        android:id="@+id/IDEndgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/EndGameTitle"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDEndgameDirections"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/IDEndgameDirections"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/EndgameDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IDEndgame" />
+
+    <TextView
+        android:id="@+id/IDClimbed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/Climbed"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/ClimbedSwitch"
+        app:layout_constraintStart_toEndOf="@+id/ClimbedSwitch"
+        app:layout_constraintTop_toTopOf="@+id/ClimbedSwitch" />
+
+    <TextView
+        android:id="@+id/IDLeveled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:enabled="false"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/Rung"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/LeveledSwitch"
+        app:layout_constraintStart_toEndOf="@+id/LeveledSwitch"
+        app:layout_constraintTop_toTopOf="@+id/LeveledSwitch" />
+
+    <Switch
+        android:id="@+id/ClimbedSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="@drawable/text_states"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toStartOf="@+id/IDEndgameDirections"
+        app:layout_constraintTop_toBottomOf="@+id/IDEndgameDirections" />
+
+    <Switch
+        android:id="@+id/LeveledSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:enabled="false"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toStartOf="@+id/ClimbedSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/ClimbedSwitch" />
+
+    <Switch
+        android:id="@+id/ParkedSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="@drawable/text_states"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toStartOf="@+id/LeveledSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/LeveledSwitch" />
+
+    <Button
+        android:id="@+id/GenerateQRButton"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_large_active"
+        android:drawableStart="@drawable/qr"
+        android:drawablePadding="@dimen/bootstrap_alert_paddings"
+        android:paddingLeft="@dimen/generate_qr_button_padding"
+        android:paddingRight="@dimen/generate_qr_button_padding"
+        android:text="@string/GenerateQRCode"
+        android:textColor="@color/ice"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

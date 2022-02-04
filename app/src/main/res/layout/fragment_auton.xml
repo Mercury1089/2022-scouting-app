@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auton"
+    android:layout_width="match_parent"
+    android:layout_height="895dp"
+    android:background="@color/bg_general"
+    android:padding="@dimen/padding"
+    tools:context=".MatchActivity">
+
+    <ImageView
+        android:id="@+id/leftEdgeBar"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@drawable/teleop_warning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rightEdgeBar"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@drawable/teleop_warning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/topEdgeBar"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:alpha="0"
+        android:background="@drawable/teleop_warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bottomEdgeBar"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:alpha="0"
+        android:background="@drawable/teleop_warning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rightEdgeBar"
+        app:layout_constraintStart_toStartOf="@+id/leftEdgeBar" />
+
+    <TextView
+        android:id="@+id/TeleopWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/teleop_warning"
+        android:fontFamily="@font/open_sans"
+        android:gravity="center"
+        android:text="@string/TeleopWarning"
+        android:textColor="@color/bg_general"
+        android:textSize="@dimen/label_text_size"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/IDAutonSeconds1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="12dp"
+        android:drawableStart="@drawable/timer"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/AutonSeconds"
+        android:textColor="@color/sky"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/TeleopWarning"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/IDPossession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/PossessionTitle"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toEndOf="@+id/leftEdgeBar"
+        app:layout_constraintTop_toBottomOf="@+id/TeleopWarning" />
+
+    <TextView
+        android:id="@+id/IDPossessionDirections"
+        android:layout_width="492dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/PossessionDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/IDPossession" />
+
+    <TextView
+        android:id="@+id/IDScoring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/ScoringTitle"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/DroppedToggle" />
+
+    <TextView
+        android:id="@+id/IDScoringDirections"
+        android:layout_width="506dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/ScoringDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/IDScoring" />
+
+    <TextView
+        android:id="@+id/IDPickedUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/PickedUp"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/IDPossessionDirections" />
+
+    <TextView
+        android:id="@+id/PickedUpCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/badge_states"
+        android:gravity="center"
+        android:paddingStart="5dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="4dp"
+        android:text="@string/DefaultValue"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/IDPickedUp"
+        app:layout_constraintStart_toEndOf="@+id/PickedUpToggle"
+        app:layout_constraintTop_toTopOf="@+id/IDPickedUp" />
+
+    <TextView
+        android:id="@+id/DroppedCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/badge_states"
+        android:gravity="center"
+        android:paddingStart="5dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="4dp"
+        android:text="@string/DefaultValue"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/IDDropped"
+        app:layout_constraintStart_toEndOf="@+id/DroppedToggle"
+        app:layout_constraintTop_toTopOf="@+id/IDDropped" />
+
+    <TextView
+        android:id="@+id/IDDropped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/Dropped"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/IDPickedUp" />
+
+    <TextView
+        android:id="@+id/AutonSeconds"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:gravity="center"
+        android:text="@string/DefaultValue"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/IDAutonSeconds1"
+        app:layout_constraintStart_toEndOf="@+id/IDAutonSeconds1"
+        app:layout_constraintTop_toTopOf="@+id/IDAutonSeconds1" />
+
+    <RadioGroup
+        android:id="@+id/PickedUpToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="@+id/IDPickedUp"
+        app:layout_constraintStart_toEndOf="@+id/IDPickedUp"
+        app:layout_constraintTop_toTopOf="@+id/IDPickedUp">
+
+        <ImageButton
+            android:id="@+id/NotPickedUpButton"
+            android:layout_width="@dimen/square_toggle_length"
+            android:layout_height="@dimen/square_toggle_length"
+            android:background="@drawable/toggle_left_states"
+            android:enabled="true"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:src="@drawable/minus_states"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/PickedUpButton"
+            android:layout_width="@dimen/square_toggle_length"
+            android:layout_height="@dimen/square_toggle_length"
+            android:background="@drawable/toggle_right_states"
+            android:gravity="center"
+            android:src="@drawable/plus_states"
+            android:enabled="false"
+            tools:ignore="ContentDescription" />
+
+        <!-- android:button="@drawable/button_rounded_corners" -->
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/DroppedToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="@+id/IDDropped"
+        app:layout_constraintStart_toStartOf="@+id/PickedUpToggle"
+        app:layout_constraintTop_toTopOf="@+id/IDDropped">
+
+        <ImageButton
+            android:id="@+id/NotDroppedButton"
+            android:layout_width="@dimen/square_toggle_length"
+            android:layout_height="@dimen/square_toggle_length"
+            android:background="@drawable/toggle_left_states"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:src="@drawable/minus_states"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/DroppedButton"
+            android:layout_width="@dimen/square_toggle_length"
+            android:layout_height="@dimen/square_toggle_length"
+            android:background="@drawable/toggle_right_states"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:src="@drawable/plus_states"
+            tools:ignore="ContentDescription" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/ScoredToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintStart_toStartOf="@+id/IDScoringDirections"
+        app:layout_constraintTop_toBottomOf="@+id/IDScoringDirections">
+
+        <Button
+            android:id="@+id/ScoredButton"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:background="@drawable/toggle_left_states"
+            android:fontFamily="@font/open_sans"
+            android:gravity="start|center_vertical"
+            android:text="@string/Scored"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/MissedButton"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:background="@drawable/toggle_right_states"
+            android:fontFamily="@font/open_sans"
+            android:gravity="start|center_vertical"
+            android:text="@string/Missed"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            tools:visibility="visible" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ScoredCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:background="@drawable/badge_states"
+        android:gravity="center"
+        android:text="@string/DefaultValue"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/ScoredToggle"
+        app:layout_constraintStart_toStartOf="@+id/ScoredToggle"
+        app:layout_constraintTop_toTopOf="@+id/ScoredToggle" />
+
+    <TextView
+        android:id="@+id/MissedCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:background="@drawable/badge_states"
+        android:gravity="center"
+        android:text="@string/DefaultValue"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/ScoredToggle"
+        app:layout_constraintStart_toEndOf="@+id/ScoredCounter"
+        app:layout_constraintTop_toTopOf="@+id/ScoredToggle" />
+
+    <TextView
+        android:id="@+id/IDMisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/futura_medium_condensed_bt"
+        android:text="@string/MiscTitle"
+        android:textColor="@drawable/header_states"
+        android:textSize="@dimen/header_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/ScoredToggle" />
+
+    <TextView
+        android:id="@+id/IDMiscDirections"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/MiscDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/IDMisc" />
+
+    <TextView
+        android:id="@+id/IDCrossedLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/CrossedLine"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/CrossedLineSwitch"
+        app:layout_constraintStart_toEndOf="@+id/CrossedLineSwitch"
+        app:layout_constraintTop_toTopOf="@+id/CrossedLineSwitch" />
+
+    <Switch
+        android:id="@+id/CrossedLineSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/IDMiscDirections" />
+
+    <TextView
+        android:id="@+id/IDFellOver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/FellOver"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/FellOverSwitch"
+        app:layout_constraintStart_toEndOf="@+id/FellOverSwitch"
+        app:layout_constraintTop_toTopOf="@+id/FellOverSwitch" />
+
+    <Switch
+        android:id="@+id/FellOverSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/CrossedLineSwitch" />
+
+    <Button
+        android:id="@+id/NextTeleopButton"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_next_states"
+        android:drawableEnd="@drawable/right_states"
+        android:paddingStart="190dp"
+        android:paddingEnd="190dp"
+        android:text="@string/TeleopNext"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
