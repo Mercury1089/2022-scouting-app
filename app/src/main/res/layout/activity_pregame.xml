@@ -13,6 +13,18 @@
     tools:context=".PregameActivity">
 
 
+    <Switch
+        android:id="@+id/PreloadedCargoSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:thumb="@drawable/thumb_states"
+        android:track="@drawable/track_states"
+        app:layout_constraintStart_toStartOf="@+id/IDToggleInstructions"
+        app:layout_constraintTop_toBottomOf="@+id/IDToggleInstructions" />
+
     <TextView
         android:id="@+id/IDSetupDirections"
         android:layout_width="wrap_content"
@@ -59,11 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="46dp"
+        android:layout_marginTop="12dp"
         android:thumb="@drawable/thumb_states"
         android:track="@drawable/track_states"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumberInput"
-        app:layout_constraintTop_toTopOf="@+id/TeamNumberInput" />
+        app:layout_constraintStart_toStartOf="@+id/PreloadedCargoSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/PreloadedCargoSwitch" />
 
     <TextView
         android:id="@+id/IDMatchNumber"
@@ -81,12 +93,12 @@
         android:id="@+id/IDAlliancePartners"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="@string/AlliancePartnersID"
         android:textColor="@drawable/text_states"
         android:textSize="@dimen/label_text_size"
-        app:layout_constraintStart_toStartOf="@+id/TeamNumberInput"
-        app:layout_constraintTop_toBottomOf="@+id/TeamNumberInput" />
+        app:layout_constraintStart_toStartOf="@+id/MissedToggle"
+        app:layout_constraintTop_toBottomOf="@+id/MissedToggle" />
 
     <EditText
         android:id="@+id/MatchNumberInput"
@@ -184,16 +196,29 @@
         app:layout_constraintTop_toTopOf="@+id/NoShowSwitch" />
 
     <TextView
+        android:id="@+id/IDPreloadedCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/PreloadedCargo"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/PreloadedCargoSwitch"
+        app:layout_constraintStart_toEndOf="@+id/PreloadedCargoSwitch"
+        app:layout_constraintTop_toTopOf="@+id/PreloadedCargoSwitch" />
+
+    <TextView
         android:id="@+id/IDAllianceColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/open_sans"
         android:text="@string/AllianceColorID"
         android:textColor="@drawable/text_states"
         android:textSize="@dimen/label_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/IDAlliancePartners"
-        app:layout_constraintStart_toStartOf="@+id/NoShowSwitch"
-        app:layout_constraintTop_toTopOf="@+id/IDAlliancePartners" />
+        app:layout_constraintStart_toStartOf="@+id/TeamNumberInput"
+        app:layout_constraintTop_toBottomOf="@+id/TeamNumberInput" />
 
     <RadioGroup
         android:id="@+id/MissedToggle"
@@ -247,14 +272,16 @@
         android:id="@+id/IDStartDirections"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/teleop_warning"
         android:fontFamily="@font/open_sans"
         android:text="@string/StartButtonDirections"
-        android:textColor="@color/banana"
+        android:textColor="@color/bg_general"
         android:textSize="@dimen/label_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/StartButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -300,6 +327,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/IDToggleInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/ToggleInstructions"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintStart_toStartOf="@+id/FirstAlliancePartnerInput"
+        app:layout_constraintTop_toBottomOf="@+id/FirstAlliancePartnerInput" />
 
     <!-- Left field side buttons -->
 

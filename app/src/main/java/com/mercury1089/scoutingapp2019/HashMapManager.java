@@ -279,6 +279,7 @@ public class HashMapManager{
                 setupHashMap.put("MatchNumber", "");
                 setupHashMap.put("TeamNumber", "");
                 setupHashMap.put("NoShow", "0");
+                setupHashMap.put("PreloadCargo", "0");
                 setupHashMap.put("AlliancePartner1", "");
                 setupHashMap.put("AlliancePartner2", "");
                 setupHashMap.put("AllianceColor", "");

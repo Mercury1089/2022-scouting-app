@@ -18,7 +18,7 @@ import java.util.TimerTask;
 public class SplashActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
-    private float volume = 0f;
+    private float volume = .25f;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

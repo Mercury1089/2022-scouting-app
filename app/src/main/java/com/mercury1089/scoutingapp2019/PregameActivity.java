@@ -57,6 +57,7 @@ public class PregameActivity extends AppCompatActivity {
 
     //Switches
     private Switch noShowSwitch;
+    private Switch preloadSwitch;
 
     //HashMaps
     private LinkedHashMap<String, String> settingsHashMap;
@@ -88,6 +89,7 @@ public class PregameActivity extends AppCompatActivity {
         blueButton = findViewById(R.id.BlueButton);
         redButton = findViewById(R.id.RedButton);
         noShowSwitch = findViewById(R.id.NoShowSwitch);
+        preloadSwitch = findViewById(R.id.PreloadedCargoSwitch);
         clearButton = findViewById(R.id.ClearButton);
         startButton = findViewById(R.id.StartButton);
         settingsButton = findViewById(R.id.SettingsButton);
@@ -176,6 +178,15 @@ public class PregameActivity extends AppCompatActivity {
         noShowSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 setupHashMap.put("NoShow", isChecked ? "1" : "0");
+                updateXMLObjects(false);
+            }
+        });
+
+        //starting listener to check status of switch
+        preloadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                setupHashMap.put("PreloadCargo", isChecked ? "1" : "0");
                 updateXMLObjects(false);
             }
         });
@@ -498,10 +509,14 @@ public class PregameActivity extends AppCompatActivity {
         if(settingsHashMap.get("Slack").equals("1"))
             slackCenter.setVisibility(View.VISIBLE);
 
+        if (setupHashMap.get("PreloadCargo").equals("1")) {
+            preloadSwitch.setChecked(true);
+        } else {
+            preloadSwitch.setChecked(false);
+        }
+
         if(setupHashMap.get("NoShow").equals("1")) {
             noShowSwitch.setChecked(true);
-
-            setupHashMap.put("StartingPosition", "");
 
             startButton.setPadding(185, 0, 185, 0);
             startButton.setText(R.string.GenerateQRCode);
@@ -513,6 +528,7 @@ public class PregameActivity extends AppCompatActivity {
             startButton.setText(R.string.Start);
             isQRButton = false;
         }
+
 
         startButtonCheck();
         clearButtonCheck();
