@@ -296,7 +296,7 @@ public class HashMapManager{
                 autonHashMap.put("LowerPortScored", "0");
                 autonHashMap.put("UpperPortMissed", "0");
                 autonHashMap.put("LowerPortMissed", "0");
-                autonHashMap.put("CrossedInitiationLine", "0");
+                autonHashMap.put("Taxi", "0");
                 break;
             case TELEOP:
                 //include all the items that will be in the teleopHashMap

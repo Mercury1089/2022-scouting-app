@@ -84,11 +84,11 @@
         <string name="Dropped">DROPPED</string>
         <string name="Plus">+</string>
         <string name="Minus">-</string>
-        <string name="ScoringDirections">Tap on either button to open additional options. In the option menu, tap as many + or - buttons as necessary to record scored and missed power cells.</string>
+        <string name="ScoringDirections">Tap the + or - buttons to record scored/missed cargo.</string>
         <string name="Scored">SCORED</string>
         <string name="Missed">MISSED</string>
-        <string name="MiscDirections">Tap on the toggle to mark if/when each action occurs.</string>
-        <string name="CrossedLine">Crossed Initiation Line</string>
+        <string name="MiscDirections">Tap on the toggle to mark if the action occurs.</string>
+        <string name="Taxi">Taxi (Robot has left the tarmac)</string>
         <string name="FellOver">Fell Over</string>
         <string name="TeleopWarning">Teleop is starting soon...</string>
         <string name="TeleopError">Switch to teleop as soon as possible!</string>

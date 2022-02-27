@@ -43,7 +43,7 @@ public class Auton extends Fragment {
     private Button nextButton;
 
     //Switches
-    private Switch crossedLineSwitch;
+    private Switch taxiSwitch;
     private Switch fellOverSwitch;
 
     //TextViews
@@ -65,7 +65,7 @@ public class Auton extends Fragment {
 
     private TextView miscID;
     private TextView miscDescription;
-    private TextView crossedLineID;
+    private TextView taxiID;
 
     private TextView fellOverID;
 
@@ -130,8 +130,8 @@ public class Auton extends Fragment {
 
         miscID = getView().findViewById(R.id.IDMisc);
         miscDescription = getView().findViewById(R.id.IDMiscDirections);
-        crossedLineID = getView().findViewById(R.id.IDCrossedLine);
-        crossedLineSwitch = getView().findViewById(R.id.CrossedLineSwitch);
+        taxiID = getView().findViewById(R.id.IDTaxi);
+        taxiSwitch = getView().findViewById(R.id.TaxiSwitch);
         fellOverSwitch = getView().findViewById(R.id.FellOverSwitch);
         fellOverID = getView().findViewById(R.id.IDFellOver);
 
@@ -680,9 +680,9 @@ public class Auton extends Fragment {
             }
         });
 
-        crossedLineSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        taxiSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                autonHashMap.put("CrossedInitiationLine", isChecked ? "1" : "0");
+                autonHashMap.put("Taxi", isChecked ? "1" : "0");
                 updateXMLObjects();
             }
         });
@@ -731,8 +731,8 @@ public class Auton extends Fragment {
     private void miscButtonsEnabledState(boolean enable){
         miscID.setEnabled(enable);
         miscDescription.setEnabled(enable);
-        crossedLineSwitch.setEnabled(enable);
-        crossedLineID.setEnabled(enable);
+        taxiSwitch.setEnabled(enable);
+        taxiID.setEnabled(enable);
         fellOverSwitch.setEnabled(enable);
         fellOverID.setEnabled(enable);
         nextButton.setEnabled(enable);
@@ -744,8 +744,8 @@ public class Auton extends Fragment {
 
         miscID.setEnabled(enable);
         miscDescription.setEnabled(enable);
-        crossedLineSwitch.setEnabled(enable);
-        crossedLineID.setEnabled(enable);
+        taxiSwitch.setEnabled(enable);
+        taxiID.setEnabled(enable);
     }
 
     private void updateXMLObjects(){
@@ -753,7 +753,7 @@ public class Auton extends Fragment {
         missedCounter.setText(GenUtils.padLeftZeros(Integer.toString(totalMissed), 3));
         pickedUpCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberPickedUp"), 3));
         droppedCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberDropped"), 3));
-        crossedLineSwitch.setChecked(autonHashMap.get("CrossedInitiationLine").equals("1"));
+        taxiSwitch.setChecked(autonHashMap.get("Taxi").equals("1"));
 
         if(setupHashMap.get("FellOver").equals("1")) {
             fellOverSwitch.setChecked(true);

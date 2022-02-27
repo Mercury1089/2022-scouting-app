@@ -54,7 +54,7 @@
         android:id="@+id/TeleopWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="684dp"
         android:background="@drawable/teleop_warning"
         android:fontFamily="@font/open_sans"
         android:gravity="center"
@@ -63,7 +63,7 @@
         android:textSize="@dimen/label_text_size"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,32 +71,28 @@
         android:id="@+id/IDAutonSeconds1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="732dp"
         android:drawableStart="@drawable/timer"
         android:drawablePadding="@dimen/drawable_padding"
         android:fontFamily="@font/futura_medium_condensed_bt"
         android:text="@string/AutonSeconds"
         android:textColor="@color/sky"
         android:textSize="@dimen/instruction_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/TeleopWarning"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/IDPossession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/futura_medium_condensed_bt"
         android:text="@string/PossessionTitle"
         android:textColor="@drawable/header_states"
         android:textSize="@dimen/header_text_size"
         app:layout_constraintStart_toEndOf="@+id/leftEdgeBar"
-        app:layout_constraintTop_toBottomOf="@+id/TeleopWarning" />
+        tools:layout_editor_absoluteY="25dp" />
 
     <TextView
         android:id="@+id/IDPossessionDirections"
@@ -362,20 +358,20 @@
         app:layout_constraintTop_toBottomOf="@+id/IDMisc" />
 
     <TextView
-        android:id="@+id/IDCrossedLine"
+        android:id="@+id/IDTaxi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:fontFamily="@font/open_sans"
-        android:text="@string/CrossedLine"
+        android:text="@string/Taxi"
         android:textColor="@drawable/text_states"
         android:textSize="@dimen/label_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/CrossedLineSwitch"
-        app:layout_constraintStart_toEndOf="@+id/CrossedLineSwitch"
-        app:layout_constraintTop_toTopOf="@+id/CrossedLineSwitch" />
+        app:layout_constraintBottom_toBottomOf="@+id/TaxiSwitch"
+        app:layout_constraintStart_toEndOf="@+id/TaxiSwitch"
+        app:layout_constraintTop_toTopOf="@+id/TaxiSwitch" />
 
     <Switch
-        android:id="@+id/CrossedLineSwitch"
+        android:id="@+id/TaxiSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -409,7 +405,7 @@
         android:thumb="@drawable/thumb_states"
         android:track="@drawable/track_states"
         app:layout_constraintStart_toStartOf="@+id/IDPossession"
-        app:layout_constraintTop_toBottomOf="@+id/CrossedLineSwitch" />
+        app:layout_constraintTop_toBottomOf="@+id/TaxiSwitch" />
 
     <Button
         android:id="@+id/NextTeleopButton"
