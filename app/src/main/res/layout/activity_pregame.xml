@@ -305,7 +305,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_start_states"
-        android:drawableEnd="@drawable/rocket_states"
+        android:drawableEnd="@drawable/airplane_states"
         android:enabled="false"
         android:fontFamily="@font/open_sans"
         android:paddingLeft="234dp"

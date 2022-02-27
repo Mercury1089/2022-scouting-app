@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/airplane_states.xml" value="0.18" />
+        <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/badge_states.xml" value="0.18" />
+        <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/button_large_states.xml" value="0.18" />
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/button_states.xml" value="0.1" />
+        <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/rocket_states.xml" value="0.18" />
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/activity_match.xml" value="0.25" />
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/activity_pregame.xml" value="0.6" />
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_auton.xml" value="0.25" />
