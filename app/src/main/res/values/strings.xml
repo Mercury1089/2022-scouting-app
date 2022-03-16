@@ -7,7 +7,7 @@
 
 <!-- Headings -->
     <!-- Titles -->
-        <string name="app_name">Scouting App 2020</string>
+        <string name="app_name">Scouting App 2022</string>
         <string name="SettingsTitle">SETTINGS</string>
         <string name="SetupTitle">SETUP</string>
         <string name="StartingPositionTitle">STARTING POSITION</string>
@@ -150,4 +150,6 @@
         <string name="NextMatch">SET UP NEXT MATCH</string>
     <string name="ToggleInstructions">Tap on the toggle to record if the options are true (on) or false (off).</string>
         <string name="PreloadedCargo">Preloaded Cargo</string>
+        <string name="UpperHub">Upper Hub</string>
+        <string name="LowerHub">Lower Hub</string>
 </resources>

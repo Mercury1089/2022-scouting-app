@@ -14,7 +14,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import com.mercury1089.scoutingapp2019.utils.GenUtils;
 import java.util.LinkedHashMap;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;

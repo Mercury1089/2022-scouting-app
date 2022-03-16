@@ -283,7 +283,6 @@ public class HashMapManager{
                 setupHashMap.put("AlliancePartner1", "");
                 setupHashMap.put("AlliancePartner2", "");
                 setupHashMap.put("AllianceColor", "");
-                setupHashMap.put("StartingPosition", "");
                 setupHashMap.put("FellOver", "0");
                 break;
             case AUTON:
@@ -291,11 +290,10 @@ public class HashMapManager{
                 autonHashMap.put("HashMapName", "Auton");
                 autonHashMap.put("NumberPickedUp", "0");
                 autonHashMap.put("NumberDropped",  "0");
-                autonHashMap.put("OuterPortScored", "0");
-                autonHashMap.put("InnerPortScored", "0");
-                autonHashMap.put("LowerPortScored", "0");
-                autonHashMap.put("UpperPortMissed", "0");
-                autonHashMap.put("LowerPortMissed", "0");
+                autonHashMap.put("ScoredUpper", "0");
+                autonHashMap.put("ScoredLower", "0");
+                autonHashMap.put("MissedUpper", "0");
+                autonHashMap.put("MissedLower", "0");
                 autonHashMap.put("Taxi", "0");
                 break;
             case TELEOP:

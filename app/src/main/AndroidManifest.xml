@@ -13,13 +13,13 @@
         android:roundIcon="@mipmap/infinite_recharge_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingsActivity"
+        <activity android:name="com.mercury1089.scoutingapp2019.SettingsActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".PregameActivity"
+        <activity android:name="com.mercury1089.scoutingapp2019.PregameActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".MatchActivity"
+        <activity android:name="com.mercury1089.scoutingapp2019.MatchActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SplashActivity"
+        <activity android:name="com.mercury1089.scoutingapp2019.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

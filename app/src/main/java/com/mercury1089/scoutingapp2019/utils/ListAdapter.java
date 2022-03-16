@@ -16,7 +16,6 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import com.mercury1089.scoutingapp2019.HashMapManager;
 import com.mercury1089.scoutingapp2019.R;
 import com.mercury1089.scoutingapp2019.SettingsActivity;
 import static com.mercury1089.scoutingapp2019.utils.GenUtils.padLeftZeros;
