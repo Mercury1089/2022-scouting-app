@@ -9,26 +9,22 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Vibrator;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
 import android.widget.Switch;
 import android.widget.TextView;
 import java.util.LinkedHashMap;
 import androidx.fragment.app.Fragment;
 import com.mercury1089.scoutingapp2019.utils.GenUtils;
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class Auton extends Fragment {
     //HashMaps for sending QR data between screens
@@ -147,14 +143,14 @@ public class Auton extends Fragment {
         notScoredUpperButton = getView().findViewById(R.id.notScoredUpperButton);
         notScoredLowerButton = getView().findViewById(R.id.notScoredLowerButton);
         scoredUpperCounter = getView().findViewById(R.id.scoredUpperCounter);
-        scoredLowerCounter = getView().findViewById(R.id.notScoredUpperCounter);
+        scoredLowerCounter = getView().findViewById(R.id.scoredLowerCounter);
 
-        missedUpperButton = getView().findViewById(R.id.notScoredUpperButton);
-        missedLowerButton = getView().findViewById(R.id.notScoredLowerButton);
+        missedUpperButton = getView().findViewById(R.id.missedUpperButton);
+        missedLowerButton = getView().findViewById(R.id.missedLowerButton);
         notMissedUpperButton = getView().findViewById(R.id.notMissedUpperButton);
         notMissedLowerButton = getView().findViewById(R.id.notMissedLowerButton);
-        missedUpperCounter = getView().findViewById(R.id.notScoredUpperCounter);
-        missedLowerCounter = getView().findViewById(R.id.notScoredLowerCounter);
+        missedUpperCounter = getView().findViewById(R.id.missedUpperCounter);
+        missedLowerCounter = getView().findViewById(R.id.missedLowerCounter);
 
         miscID = getView().findViewById(R.id.IDMisc);
         miscDescription = getView().findViewById(R.id.IDMiscDirections);
@@ -389,8 +385,8 @@ public class Auton extends Fragment {
         scoredLowerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int currentCount = Integer.parseInt((String) scoredUpperCounter.getText());
-                    currentCount++;
+                int currentCount = Integer.parseInt((String) scoredLowerCounter.getText());
+                currentCount++;
                 autonHashMap.put("ScoredLower", String.valueOf(currentCount));
                 updateXMLObjects();
             }
@@ -410,8 +406,7 @@ public class Auton extends Fragment {
             @Override
             public void onClick(View view) {
                 int currentCount = Integer.parseInt((String) missedUpperCounter.getText());
-                if (currentCount > 0)
-                    currentCount++;
+                currentCount++;
                 autonHashMap.put("MissedUpper", String.valueOf(currentCount));
                 updateXMLObjects();
             }
@@ -420,10 +415,10 @@ public class Auton extends Fragment {
         notMissedUpperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int currentCount = Integer.parseInt((String) missedLowerCounter.getText());
+                int currentCount = Integer.parseInt((String) missedUpperCounter.getText());
                 if (currentCount > 0)
                     currentCount--;
-                autonHashMap.put("MissedLower", String.valueOf(currentCount));
+                autonHashMap.put("MissedUpper", String.valueOf(currentCount));
                 updateXMLObjects();
             }
         });
@@ -432,7 +427,7 @@ public class Auton extends Fragment {
             @Override
             public void onClick(View view) {
                 int currentCount = Integer.parseInt((String) missedLowerCounter.getText());
-                currentCount--;
+                currentCount++;
                 autonHashMap.put("MissedLower", String.valueOf(currentCount));
                 updateXMLObjects();
             }
@@ -492,9 +487,13 @@ public class Auton extends Fragment {
 
         scoredUpperButton.setEnabled(enable);
         scoredLowerButton.setEnabled(enable);
+        notScoredUpperButton.setEnabled(enable);
+        notScoredLowerButton.setEnabled(enable);
 
         missedUpperButton.setEnabled(enable);
         missedLowerButton.setEnabled(enable);
+        notMissedUpperButton.setEnabled(enable);
+        notMissedLowerButton.setEnabled(enable);
     }
 
     private void miscButtonsEnabledState(boolean enable){
@@ -518,12 +517,12 @@ public class Auton extends Fragment {
     }
 
     private void updateXMLObjects(){
-        scoredUpperCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("ScoredUpper"), 3));
-        scoredLowerCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("ScoredLower"), 3));
-        missedUpperCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("MissedUpper"), 3));
-        missedLowerCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("MissedLower"), 3));
-        pickedUpCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberPickedUp"), 3));
-        droppedCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberDropped"), 3));
+        scoredUpperCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("ScoredUpper"), 2));
+        scoredLowerCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("ScoredLower"), 2));
+        missedUpperCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("MissedUpper"), 2));
+        missedLowerCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("MissedLower"), 2));
+        pickedUpCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberPickedUp"), 2));
+        droppedCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberDropped"), 2));
         taxiSwitch.setChecked(autonHashMap.get("Taxi").equals("1"));
 
         if(setupHashMap.get("FellOver").equals("1")) {

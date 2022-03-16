@@ -144,7 +144,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/notScoredUpperCounter"
+        android:id="@+id/missedUpperCounter"
         android:layout_width="38dp"
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
@@ -641,7 +641,7 @@
         app:layout_constraintTop_toBottomOf="@+id/IDScoringDirections" />
 
     <TextView
-        android:id="@+id/notScoredLowerCounter"
+        android:id="@+id/missedLowerCounter"
         android:layout_width="38dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
