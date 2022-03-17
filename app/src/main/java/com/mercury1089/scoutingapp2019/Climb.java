@@ -30,18 +30,19 @@ public class Climb extends Fragment {
 
     //Buttons
     private Button generateQRButton;
+    private Button lowRungButton;
+    private Button midRungButton;
+    private Button highRungButton;
+    private Button traversalRungButton;
 
     //Switches
     private Switch climbedSwitch;
-    private Switch leveledSwitch;
-    private Switch parkedSwitch;
 
     //TextViews
     private TextView endgameID;
     private TextView endgameDirections;
     private TextView climbedID;
-    private TextView leveledID;
-    private TextView parkedID;
+    private TextView climbRungDirections;
 
     //other variables
     private ProgressDialog progressDialog;
@@ -71,49 +72,22 @@ public class Climb extends Fragment {
 
         climbedID = getView().findViewById(R.id.IDClimbed);
         climbedSwitch = getView().findViewById(R.id.ClimbedSwitch);
-
-        leveledID = getView().findViewById(R.id.IDLeveled);
-        leveledSwitch = getView().findViewById(R.id.LeveledSwitch);
-
-        parkedID = getView().findViewById(R.id.IDParked);
-        parkedSwitch = getView().findViewById(R.id.ParkedSwitch);
+        climbRungDirections = getView().findViewById(R.id.IDClimbRungDirections)
 
         generateQRButton = getView().findViewById(R.id.GenerateQRButton);
+        lowRungButton = getView().findViewById(R.id.LowRungButton);
+        midRungButton = getView().findViewById(R.id.MidRungButton);
+        highRungButton = getView().findViewById(R.id.HighRungButton);
+        traversalRungButton = getView().findViewById(R.id.TraversalRungButton);
 
         //set listeners for buttons
         climbedSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                climbHashMap.put("CLP", isChecked ? "C" : "");
+                climbHashMap.put("Climbed", isChecked ? "1" : "0");
                 updateXMLObjects();
             }
         });
 
-        leveledSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(climbedSwitch.isChecked())
-                    climbHashMap.put("CLP", isChecked ? "L" : "C");
-                updateXMLObjects();
-            }
-        });
-
-        parkedSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    climbHashMap.put("CLP", "P");
-                    climbedSwitch.setEnabled(false);
-                    climbedID.setEnabled(false);
-
-                    leveledSwitch.setEnabled(false);
-                    leveledID.setEnabled(false);
-                } else {
-                    climbHashMap.put("CLP", "");
-                    climbedSwitch.setEnabled(true);
-                    climbedID.setEnabled(true);
-                }
-                climbHashMap.put("Parked", isChecked ? "1" : "0");
-                updateXMLObjects();
-            }
-        });
 
         generateQRButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,54 +127,43 @@ public class Climb extends Fragment {
                 });
             }
         });
+
+        lowRungButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                climbHashMap.put("Rung", "L");
+                updateXMLObjects();
+            }
+        });
+
+        midRungButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                climbHashMap.put("Rung", "M");
+                updateXMLObjects();
+            }
+        });
+
+        highRungButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                climbHashMap.put("Rung", "H");
+                updateXMLObjects();
+            }
+        });
+
+        traversalRungButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                climbHashMap.put("Rung", "T");
+                updateXMLObjects();
+            }
+        });
     }
 
     private void updateXMLObjects(){
-        climbedSwitch.setChecked(climbHashMap.get("CLP").equals("C") || climbHashMap.get("CLP").equals("L"));
-        leveledSwitch.setChecked(climbHashMap.get("CLP").equals("L"));
-        parkedSwitch.setChecked(climbHashMap.get("CLP").equals("P"));
-
-        switch(climbHashMap.get("CLP")){
-            case "C":
-            case "L":
-                leveledSwitch.setEnabled(true);
-                leveledID.setEnabled(true);
-
-                parkedSwitch.setEnabled(false);
-                parkedID.setEnabled(false);
-                break;
-            case "P":
-                climbedSwitch.setEnabled(false);
-                climbedID.setEnabled(false);
-
-                leveledSwitch.setEnabled(false);
-                leveledID.setEnabled(false);
-                break;
-            default:
-                climbedSwitch.setEnabled(true);
-                climbedID.setEnabled(true);
-
-                leveledSwitch.setEnabled(false);
-                leveledID.setEnabled(false);
-
-                parkedSwitch.setEnabled(true);
-                parkedID.setEnabled(true);
-        }
-
-        if(setupHashMap.get("FellOver").equals("1")){
-            climbedSwitch.setChecked(false);
-            climbedSwitch.setEnabled(false);
-            climbedID.setEnabled(false);
-
-            leveledSwitch.setChecked(false);
-            leveledSwitch.setEnabled(false);
-            leveledID.setEnabled(false);
-
-            climbHashMap.put("CLP", "");
-        } else {
-            endgameID.setEnabled(true);
-            endgameDirections.setEnabled(true);
-        }
+        climbedSwitch.setChecked(climbHashMap.get("Climbed").equals("0"));
+        climbRungDirections.setEnabled(climbedSwitch.isChecked());
     }
 
     @Override

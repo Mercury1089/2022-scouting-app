@@ -2,6 +2,7 @@ package com.mercury1089.scoutingapp2019;
 
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -49,6 +50,12 @@ public class Teleop extends Fragment {
     private TextView pickedUpCounter;
     private TextView droppedID;
     private TextView droppedCounter;
+    private TextView IDUpperHub;
+    private TextView IDLowerHub;
+    private TextView IDScoredUpper;
+    private TextView IDScoredLower;
+    private TextView IDMissedUpper;
+    private TextView IDMissedLower;
 
     private TextView scoringID;
     private TextView scoringDescription;
@@ -111,6 +118,12 @@ public class Teleop extends Fragment {
         scoredLowerCounter = getView().findViewById(R.id.scoredLowerCounter);
         missedUpperCounter = getView().findViewById(R.id.missedUpperCounter);
         missedLowerCounter = getView().findViewById(R.id.missedLowerCounter);
+        IDUpperHub = getView().findViewById(R.id.IDUpperHub);
+        IDLowerHub = getView().findViewById(R.id.IDLowerHub);
+        IDScoredUpper = getView().findViewById(R.id.IDScoredUpper);
+        IDScoredLower = getView().findViewById(R.id.IDScoredLower);
+        IDMissedUpper = getView().findViewById(R.id.IDMissedUpper);
+        IDMissedLower = getView().findViewById(R.id.IDMissedLower);
 
         miscID = getView().findViewById(R.id.IDMisc);
         miscDescription = getView().findViewById(R.id.IDMiscDirections);
@@ -118,6 +131,12 @@ public class Teleop extends Fragment {
         fellOverID = getView().findViewById(R.id.IDFellOver);
 
         nextButton = getView().findViewById(R.id.NextClimbButton);
+
+        //get HashMap data (fill with defaults if empty or null)
+        HashMapManager.checkNullOrEmpty(HashMapManager.HASH.SETUP);
+        HashMapManager.checkNullOrEmpty(HashMapManager.HASH.AUTON);
+        setupHashMap = HashMapManager.getSetupHashMap();
+        teleopHashMap = HashMapManager.getTeleopHashMap();
 
         //set listeners for buttons
         pickedUpIncrementButton.setOnClickListener(new View.OnClickListener() {
@@ -221,7 +240,7 @@ public class Teleop extends Fragment {
             }
         });
 
-        missedLowerCounter.setOnClickListener(new View.OnClickListener() {
+        missedLowerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int currentCount = Integer.parseInt((String)missedLowerCounter.getText());
@@ -275,11 +294,21 @@ public class Teleop extends Fragment {
     private void scoringButtonsEnabledState(boolean enable){
         scoringID.setEnabled(enable);
         scoringDescription.setEnabled(enable);
+        IDUpperHub.setEnabled(enable);
+        IDLowerHub.setEnabled(enable);
+        IDScoredUpper.setEnabled(enable);
+        IDScoredLower.setEnabled(enable);
+        IDMissedUpper.setEnabled(enable);
+        IDMissedLower.setEnabled(enable);
 
         scoredUpperButton.setEnabled(enable);
         notScoredUpperButton.setEnabled(enable);
         scoredLowerButton.setEnabled(enable);
         notScoredLowerButton.setEnabled(enable);
+        scoredUpperCounter.setEnabled(enable);
+        scoredLowerCounter.setEnabled(enable);
+        missedUpperCounter.setEnabled(enable);
+        missedLowerCounter.setEnabled(enable);
 
         missedUpperButton.setEnabled(enable);
         notMissedUpperButton.setEnabled(enable);
@@ -291,7 +320,7 @@ public class Teleop extends Fragment {
     private void miscButtonsEnabledState(boolean enable){
         miscID.setEnabled(enable);
         miscDescription.setEnabled(enable);
-        fellOverSwitch.setEnabled(enable);
+        //Fell Over switch is not included in case user accidentally clicks it
         fellOverID.setEnabled(enable);
         nextButton.setEnabled(enable);
     }
@@ -324,6 +353,22 @@ public class Teleop extends Fragment {
                 droppedDecrementButton.setEnabled(false);
             else
                 droppedDecrementButton.setEnabled(true);
+            if (Integer.parseInt((String)scoredUpperCounter.getText()) <= 0)
+                notScoredUpperButton.setEnabled(false);
+            else
+                notScoredUpperButton.setEnabled(true);
+            if (Integer.parseInt((String)scoredLowerCounter.getText()) <= 0)
+                notScoredLowerButton.setEnabled(false);
+            else
+                notScoredLowerButton.setEnabled(true);
+            if (Integer.parseInt((String)missedUpperCounter.getText()) <= 0)
+                notMissedUpperButton.setEnabled(false);
+            else
+                notMissedUpperButton.setEnabled(true);
+            if (Integer.parseInt((String)missedLowerCounter.getText()) <= 0)
+                notMissedLowerButton.setEnabled(false);
+            else
+                notMissedLowerButton.setEnabled(true);
         }
     }
 

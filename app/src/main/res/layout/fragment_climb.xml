@@ -11,19 +11,6 @@
     tools:ignore="ExtraText">
 
     <TextView
-        android:id="@+id/IDParked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/Parked"
-        android:textColor="@drawable/text_states"
-        android:textSize="@dimen/label_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/ParkedSwitch"
-        app:layout_constraintStart_toEndOf="@+id/ParkedSwitch"
-        app:layout_constraintTop_toTopOf="@+id/ParkedSwitch" />
-
-    <TextView
         android:id="@+id/IDEndgame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +36,20 @@
         app:layout_constraintTop_toBottomOf="@+id/IDEndgame" />
 
     <TextView
+        android:id="@+id/IDClimbRungDirections"
+        android:layout_width="463dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_italic"
+        android:text="@string/ClimbRungDirections"
+        android:textColor="@drawable/text_states"
+        android:textSize="@dimen/instruction_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IDClimbed" />
+
+    <TextView
         android:id="@+id/IDClimbed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,20 +61,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/ClimbedSwitch"
         app:layout_constraintStart_toEndOf="@+id/ClimbedSwitch"
         app:layout_constraintTop_toTopOf="@+id/ClimbedSwitch" />
-
-    <TextView
-        android:id="@+id/IDLeveled"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:enabled="false"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/Rung"
-        android:textColor="@drawable/text_states"
-        android:textSize="@dimen/label_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/LeveledSwitch"
-        app:layout_constraintStart_toEndOf="@+id/LeveledSwitch"
-        app:layout_constraintTop_toTopOf="@+id/LeveledSwitch" />
 
     <Switch
         android:id="@+id/ClimbedSwitch"
@@ -87,32 +74,6 @@
         android:track="@drawable/track_states"
         app:layout_constraintStart_toStartOf="@+id/IDEndgameDirections"
         app:layout_constraintTop_toBottomOf="@+id/IDEndgameDirections" />
-
-    <Switch
-        android:id="@+id/LeveledSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:enabled="false"
-        android:thumb="@drawable/thumb_states"
-        android:track="@drawable/track_states"
-        app:layout_constraintStart_toStartOf="@+id/ClimbedSwitch"
-        app:layout_constraintTop_toBottomOf="@+id/ClimbedSwitch" />
-
-    <Switch
-        android:id="@+id/ParkedSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:textColor="@drawable/text_states"
-        android:thumb="@drawable/thumb_states"
-        android:track="@drawable/track_states"
-        app:layout_constraintStart_toStartOf="@+id/LeveledSwitch"
-        app:layout_constraintTop_toBottomOf="@+id/LeveledSwitch" />
 
     <Button
         android:id="@+id/GenerateQRButton"
@@ -131,5 +92,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/ClimbRungToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintStart_toStartOf="@+id/IDClimbRungDirections"
+        app:layout_constraintTop_toBottomOf="@+id/IDClimbRungDirections">
+
+        <Button
+            android:id="@+id/LowRungButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_states"
+            android:text="@string/LowRung"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/MidRungButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_states"
+            android:text="@string/MidRung"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/HighRungButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_states"
+            android:text="@string/HighRung"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/TraversalRungButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_states"
+            android:text="@string/TraversalRung"
+            android:textColor="@drawable/text_states"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,12 +64,18 @@ public class Auton extends Fragment {
 
     private TextView scoringID;
     private TextView scoringDescription;
+    private TextView IDUpperHub;
+    private TextView IDLowerHub;
+    private TextView IDScoredUpper;
+    private TextView IDScoredLower;
+    private TextView IDMissedUpper;
+    private TextView IDMissedLower;
 
     private TextView scoredUpperCounter;
     private TextView missedUpperCounter;
-
     private TextView scoredLowerCounter;
     private TextView missedLowerCounter;
+
 
     private TextView miscID;
     private TextView miscDescription;
@@ -137,6 +143,12 @@ public class Auton extends Fragment {
 
         scoringID = getView().findViewById(R.id.IDScoring);
         scoringDescription = getView().findViewById(R.id.IDScoringDirections);
+        IDUpperHub = getView().findViewById(R.id.IDUpperHub);
+        IDLowerHub = getView().findViewById(R.id.IDLowerHub);
+        IDScoredUpper = getView().findViewById(R.id.IDScoredUpper);
+        IDScoredLower = getView().findViewById(R.id.IDScoredLower);
+        IDMissedUpper = getView().findViewById(R.id.IDMissedUpper);
+        IDMissedLower = getView().findViewById(R.id.IDMissedLower);
 
         scoredUpperButton = getView().findViewById(R.id.scoredUpperButton);
         scoredLowerButton = getView().findViewById(R.id.scoredLowerButton);
@@ -484,11 +496,21 @@ public class Auton extends Fragment {
     private void scoringButtonsEnabledState(boolean enable){
         scoringID.setEnabled(enable);
         scoringDescription.setEnabled(enable);
+        IDUpperHub.setEnabled(enable);
+        IDLowerHub.setEnabled(enable);
+        IDScoredUpper.setEnabled(enable);
+        IDScoredLower.setEnabled(enable);
+        IDMissedUpper.setEnabled(enable);
+        IDMissedLower.setEnabled(enable);
 
         scoredUpperButton.setEnabled(enable);
         scoredLowerButton.setEnabled(enable);
         notScoredUpperButton.setEnabled(enable);
         notScoredLowerButton.setEnabled(enable);
+        scoredUpperCounter.setEnabled(enable);
+        scoredLowerCounter.setEnabled(enable);
+        missedUpperCounter.setEnabled(enable);
+        missedLowerCounter.setEnabled(enable);
 
         missedUpperButton.setEnabled(enable);
         missedLowerButton.setEnabled(enable);
@@ -531,6 +553,7 @@ public class Auton extends Fragment {
         } else {
             fellOverSwitch.setChecked(false);
             allButtonsEnabledState(true);
+            //Disables decrement buttons if counter is at 0
             if(Integer.parseInt((String)pickedUpCounter.getText()) <= 0)
                 pickedUpDecrementButton.setEnabled(false);
             else
@@ -539,6 +562,23 @@ public class Auton extends Fragment {
                 droppedDecrementButton.setEnabled(false);
             else
                 droppedDecrementButton.setEnabled(true);
+            if (Integer.parseInt((String)scoredUpperCounter.getText()) <= 0)
+                notScoredUpperButton.setEnabled(false);
+            else
+                notScoredUpperButton.setEnabled(true);
+            if (Integer.parseInt((String)scoredLowerCounter.getText()) <= 0)
+                notScoredLowerButton.setEnabled(false);
+            else
+                notScoredLowerButton.setEnabled(true);
+            if (Integer.parseInt((String)missedUpperCounter.getText()) <= 0)
+                notMissedUpperButton.setEnabled(false);
+            else
+                notMissedUpperButton.setEnabled(true);
+            if (Integer.parseInt((String)missedLowerCounter.getText()) <= 0)
+                notMissedLowerButton.setEnabled(false);
+            else
+                notMissedLowerButton.setEnabled(true);
+
         }
     }
 

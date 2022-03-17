@@ -12,10 +12,14 @@
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/activity_pregame.xml" value="0.6" />
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_auton.xml" value="0.536" />
         <entry key="..\:/Users/nitak/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_climb.xml" value="0.25" />
+        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/toggle_blue_active.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/drawable/toggle_blue_states.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/activity_match.xml" value="0.5977653631284916" />
         <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/activity_pregame.xml" value="0.5" />
         <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/enter_password_popup.xml" value="0.2625" />
-        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_auton.xml" value="0.9" />
-        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_teleop.xml" value="0.67" />
+        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_auton.xml" value="0.25" />
+        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_climb.xml" value="0.67" />
+        <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/fragment_teleop.xml" value="0.75" />
         <entry key="..\:/Users/s102027/AndroidStudioProjects/2022-scouting-app/app/src/main/res/layout/popup_qr.xml" value="0.5" />
       </map>
     </option>

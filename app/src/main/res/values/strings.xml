@@ -18,7 +18,7 @@
         <string name="MiscTitle">MISC</string>
         <string name="ControlPanelTitle">CONTROL PANEL</string>
         <string name="ClimbTitle">CLIMB</string>
-        <string name="EndGameTitle">ENDGAME</string>
+        <string name="EndGameTitle">CLIMBING/TRAVERSING</string>
         <string name="QRCodeTitle">DID YOU SCAN YOUR QR CODE?</string>
 
     <!-- Tabs -->
@@ -103,9 +103,12 @@
 
     <!-- Climb -->
         <string name="EndgameDirections">Tap on the toggle to mark if the action occurs.</string>
+        <string name="ClimbRungDirections">Which rung is the robot contacting? If they\'re touching more than one, select the LOWEST rung.</string>
         <string name="Climbed">Climbed</string>
-        <string name="Rung">Leveled the rung</string>
-        <string name="Parked">Parked in the rendezvous</string>
+        <string name="LowRung">LOW</string>
+        <string name="MidRung">MID</string>
+        <string name="HighRung">HIGH</string>
+        <string name="TraversalRung">TRAVERSAL</string>
 
 
 <!-- Display Popups -->

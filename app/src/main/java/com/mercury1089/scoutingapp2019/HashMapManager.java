@@ -283,6 +283,7 @@ public class HashMapManager{
                 setupHashMap.put("AlliancePartner1", "");
                 setupHashMap.put("AlliancePartner2", "");
                 setupHashMap.put("AllianceColor", "");
+                //Note: FellOver is put in setup hashmap because its value may be updated in Auton, Teleop, or Climb
                 setupHashMap.put("FellOver", "0");
                 break;
             case AUTON:
@@ -301,18 +302,17 @@ public class HashMapManager{
                 teleopHashMap.put("HashMapName", "Teleop");
                 teleopHashMap.put("NumberPickedUp", "0");
                 teleopHashMap.put("NumberDropped",  "0");
-                teleopHashMap.put("OuterPortScored", "0");
-                teleopHashMap.put("InnerPortScored", "0");
-                teleopHashMap.put("LowerPortScored", "0");
-                teleopHashMap.put("UpperPortMissed", "0");
-                teleopHashMap.put("LowerPortMissed", "0");
-                teleopHashMap.put("StageTwo", "0");
-                teleopHashMap.put("StageThree", "0");
+                teleopHashMap.put("ScoredUpper", "0");
+                teleopHashMap.put("ScoredLower", "0");
+                teleopHashMap.put("MissedUpper", "0");
+                teleopHashMap.put("MissedLower", "0");
                 break;
             case CLIMB:
                 //include all the items that will be in the climbHashMap
                 climbHashMap.put("HashMapName", "Climb");
-                climbHashMap.put("CLP", "");
+                climbHashMap.put("Climbed", "0");
+                //If robot didn't climb, value will be 0. Otherwise, it will be "L", "M", "H", or "T"
+                climbHashMap.put("Rung", "0");
                 break;
         }
     }
