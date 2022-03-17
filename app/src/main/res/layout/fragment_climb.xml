@@ -77,9 +77,8 @@
 
     <Button
         android:id="@+id/GenerateQRButton"
-        android:layout_width="0dp"
+        android:layout_width="560dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/button_large_active"
         android:drawableStart="@drawable/qr"
         android:drawablePadding="@dimen/bootstrap_alert_paddings"
@@ -90,59 +89,8 @@
         android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/ClimbRungToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:divider="?android:attr/dividerHorizontal"
-        android:orientation="horizontal"
-        android:showDividers="middle"
-        app:layout_constraintStart_toStartOf="@+id/IDClimbRungDirections"
-        app:layout_constraintTop_toBottomOf="@+id/IDClimbRungDirections">
-
-        <Button
-            android:id="@+id/LowRungButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_states"
-            android:text="@string/LowRung"
-            android:textColor="@drawable/text_states"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/MidRungButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_states"
-            android:text="@string/MidRung"
-            android:textColor="@drawable/text_states"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/HighRungButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_states"
-            android:text="@string/HighRung"
-            android:textColor="@drawable/text_states"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/TraversalRungButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_states"
-            android:text="@string/TraversalRung"
-            android:textColor="@drawable/text_states"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold" />
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

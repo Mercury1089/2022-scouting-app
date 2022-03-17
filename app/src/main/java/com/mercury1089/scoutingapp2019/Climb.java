@@ -30,10 +30,6 @@ public class Climb extends Fragment {
 
     //Buttons
     private Button generateQRButton;
-    private Button lowRungButton;
-    private Button midRungButton;
-    private Button highRungButton;
-    private Button traversalRungButton;
 
     //Switches
     private Switch climbedSwitch;
@@ -72,13 +68,9 @@ public class Climb extends Fragment {
 
         climbedID = getView().findViewById(R.id.IDClimbed);
         climbedSwitch = getView().findViewById(R.id.ClimbedSwitch);
-        climbRungDirections = getView().findViewById(R.id.IDClimbRungDirections)
+        climbRungDirections = getView().findViewById(R.id.IDClimbRungDirections);
 
         generateQRButton = getView().findViewById(R.id.GenerateQRButton);
-        lowRungButton = getView().findViewById(R.id.LowRungButton);
-        midRungButton = getView().findViewById(R.id.MidRungButton);
-        highRungButton = getView().findViewById(R.id.HighRungButton);
-        traversalRungButton = getView().findViewById(R.id.TraversalRungButton);
 
         //set listeners for buttons
         climbedSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
@@ -127,44 +119,23 @@ public class Climb extends Fragment {
                 });
             }
         });
-
-        lowRungButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                climbHashMap.put("Rung", "L");
-                updateXMLObjects();
-            }
-        });
-
-        midRungButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                climbHashMap.put("Rung", "M");
-                updateXMLObjects();
-            }
-        });
-
-        highRungButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                climbHashMap.put("Rung", "H");
-                updateXMLObjects();
-            }
-        });
-
-        traversalRungButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                climbHashMap.put("Rung", "T");
-                updateXMLObjects();
-            }
-        });
     }
 
-    private void updateXMLObjects(){
-        climbedSwitch.setChecked(climbHashMap.get("Climbed").equals("0"));
-        climbRungDirections.setEnabled(climbedSwitch.isChecked());
+    private void climbButtonsEnabledState(boolean enable) {
+        climbRungDirections.setEnabled(enable);
     }
+
+    private void updateXMLObjects() {
+        if (climbHashMap.get("Climbed").equals("1")) {
+            climbedSwitch.setChecked(true);
+            climbButtonsEnabledState(true);
+        } else {
+            climbedSwitch.setChecked(false);
+            climbButtonsEnabledState(false);
+        }
+
+    }
+
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {

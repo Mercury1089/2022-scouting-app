@@ -622,7 +622,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/futura_medium_condensed_bt"
         android:text="@string/UpperHub"
-        android:textColor="@color/sky"
+        android:textColor="@drawable/subead_states"
         android:textSize="@dimen/subheader_text_size"
         app:layout_constraintStart_toStartOf="@+id/leftEdgeBar"
         app:layout_constraintTop_toBottomOf="@+id/IDScoringDirections" />
@@ -635,7 +635,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/futura_medium_condensed_bt"
         android:text="@string/LowerHub"
-        android:textColor="@color/sky"
+        android:textColor="@drawable/subead_states"
         android:textSize="@dimen/subheader_text_size"
         app:layout_constraintStart_toEndOf="@+id/IDUpperHub"
         app:layout_constraintTop_toBottomOf="@+id/IDScoringDirections" />
