@@ -16,6 +16,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import java.util.LinkedHashMap;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.tabs.TabLayout;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -39,6 +41,9 @@ public class Climb extends Fragment {
     private TextView endgameDirections;
     private TextView climbedID;
     private TextView climbRungDirections;
+
+    //Containers
+    private TabLayout rungTabs;
 
     //other variables
     private ProgressDialog progressDialog;
@@ -71,12 +76,38 @@ public class Climb extends Fragment {
         climbRungDirections = getView().findViewById(R.id.IDClimbRungDirections);
 
         generateQRButton = getView().findViewById(R.id.GenerateQRButton);
+        rungTabs = getView().findViewById(R.id.rungTabs);
 
         //set listeners for buttons
         climbedSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 climbHashMap.put("Climbed", isChecked ? "1" : "0");
                 updateXMLObjects();
+            }
+        });
+
+        rungTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                CharSequence text = tab.getText();
+                if ("LOW".equals(text)) {
+                    climbHashMap.put("Rung", "L");
+
+                    climbHashMap.put("Rung", "M");
+                } else if ("MID".equals(text)) {
+                    climbHashMap.put("Rung", "M");
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
@@ -123,6 +154,8 @@ public class Climb extends Fragment {
 
     private void climbButtonsEnabledState(boolean enable) {
         climbRungDirections.setEnabled(enable);
+        rungTabs.setEnabled(enable);
+
     }
 
     private void updateXMLObjects() {
