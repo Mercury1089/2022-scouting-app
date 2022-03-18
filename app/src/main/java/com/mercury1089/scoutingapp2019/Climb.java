@@ -130,6 +130,7 @@ public class Climb extends Fragment {
             climbedSwitch.setChecked(true);
             climbButtonsEnabledState(true);
         } else {
+            climbHashMap.put("Rung", "0"); //Resets "rung" value to default (look at HashMapMananger for details)
             climbedSwitch.setChecked(false);
             climbButtonsEnabledState(false);
         }

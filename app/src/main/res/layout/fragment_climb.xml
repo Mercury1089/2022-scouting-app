@@ -10,6 +10,48 @@
     tools:context=".MatchActivity"
     tools:ignore="ExtraText">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/rungTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@color/bg_general"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IDClimbRungDirections"
+        app:tabBackground="@drawable/button_states"
+        app:tabTextColor="@color/ice">
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/lowRungTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_left_states"
+            android:text="@string/LowRung"
+            app:tabBackground="@drawable/toggle_left_states" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/midRungTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/MidRung" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/highRungTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_right_states"
+            android:text="@string/HighRung"
+            app:tabBackground="@drawable/toggle_right_states" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/traversalRungTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TraversalRung" />
+    </com.google.android.material.tabs.TabLayout>
+
     <TextView
         android:id="@+id/IDEndgame"
         android:layout_width="wrap_content"
