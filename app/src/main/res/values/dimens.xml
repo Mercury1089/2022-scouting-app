@@ -4,7 +4,7 @@
     <dimen name="subheader_text_size">20px</dimen>
     <dimen name="label_text_size">16sp</dimen>
     <dimen name="button_text_size">16sp</dimen>
-    <dimen name="instruction_text_size">18sp</dimen>
+    <dimen name="instruction_text_size">17sp</dimen>
     <dimen name="speech_bubble_length">320dp</dimen>
     <dimen name="tail_width">24dp</dimen>
     <dimen name="tail_height">12dp</dimen>
