@@ -105,7 +105,7 @@
         android:fontFamily="@font/open_sans"
         android:paddingLeft="100dp"
         android:paddingRight="100dp"
-        android:text="@string/Recharge"
+        android:text="@string/SetupNext"
         android:textColor="@drawable/text_states"
         android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"

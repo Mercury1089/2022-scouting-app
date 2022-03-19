@@ -148,7 +148,7 @@
         <string name="IDPasswordRequiredConfirm">Password protect app settings?</string>
 
     <!-- Button Text -->
-        <string name="Recharge">RAPIDLY REACT for Next Match</string>
+        <string name="SetupNext">RAPIDLY REACT for Next Match</string>
         <string name="Scanned">Scanned?</string>
         <string name="NextMatch">SET UP NEXT MATCH</string>
     <string name="ToggleInstructions">Tap on the toggle to record if the options are true (on) or false (off).</string>
