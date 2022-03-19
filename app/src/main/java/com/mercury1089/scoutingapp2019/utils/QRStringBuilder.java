@@ -24,33 +24,26 @@ public class QRStringBuilder {
         QRString.append(setup.get("AlliancePartner2")).append(",");
         QRString.append(setup.get("AllianceColor")).append(",");
         QRString.append(setup.get("NoShow").equals("1") ? "Y" : "N").append(",");
-        String startingPos = (String)setup.get("StartingPosition");
-        if(startingPos != null && startingPos.length() >= 2)
-            QRString.append(startingPos.substring(1)).append(",");
-        else
-            QRString.append(startingPos).append(",");
-        QRString.append(auton.get("CrossedInitiationLine").equals("1") ? "Y" : "N").append(",");
-        QRString.append(teleop.get("StageTwo").equals("1") ? "Y" : "N").append(",");
-        QRString.append(teleop.get("StageThree").equals("1") ? "Y" : "N").append(",");
-        QRString.append(climb.get("CLP")).append(",");
         QRString.append(setup.get("FellOver").equals("1") ? "Y" : "N").append(",");
+
+        QRString.append(auton.get("Taxi").equals("1") ? "Y" : "N").append(",");
+        QRString.append(climb.get("Rung")).append(",");
+
 
         //Event Data
         //Auton
         QRString.append("Auton").append(",");
-        QRString.append(auton.get("InnerPortScored")).append(",");
-        QRString.append(auton.get("OuterPortScored")).append(",");
-        QRString.append(auton.get("LowerPortScored")).append(",");
-        QRString.append(auton.get("UpperPortMissed")).append(",");
-        QRString.append(auton.get("LowerPortMissed")).append(",");
+        QRString.append(auton.get("ScoredUpper")).append(",");
+        QRString.append(auton.get("ScoredLower")).append(",");
+        QRString.append(auton.get("MissedUpper")).append(",");
+        QRString.append(auton.get("MissedLower")).append(",");
         QRString.append(auton.get("NumberDropped")).append(",");
         //Teleop
         QRString.append("Teleop").append(",");
-        QRString.append(teleop.get("InnerPortScored")).append(",");
-        QRString.append(teleop.get("OuterPortScored")).append(",");
-        QRString.append(teleop.get("LowerPortScored")).append(",");
-        QRString.append(teleop.get("UpperPortMissed")).append(",");
-        QRString.append(teleop.get("LowerPortMissed")).append(",");
+        QRString.append(teleop.get("ScoredUpper")).append(",");
+        QRString.append(teleop.get("ScoredLower")).append(",");
+        QRString.append(teleop.get("MissedUpper")).append(",");
+        QRString.append(teleop.get("MissedLower")).append(",");
         QRString.append(teleop.get("NumberDropped")).append(",");
     }
 

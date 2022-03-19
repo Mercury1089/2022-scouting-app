@@ -11,7 +11,7 @@
     android:orientation="vertical"
     android:padding="@dimen/padding">
 
-    <scoutingapp2022.LoadingGIFVIew
+    <com.mercury1089.scoutingapp2019.LoadingGIFVIew
         android:id="@+id/loading_gif"
         android:layout_width="416dp"
         android:layout_height="355dp"
