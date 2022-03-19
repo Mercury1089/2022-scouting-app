@@ -86,8 +86,10 @@ public class Climb extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 climbHashMap.put("Climbed", isChecked ? "1" : "0");
                 //Default option for rung is LOW
-                if (isChecked)
+                if (isChecked) {
                     rungTabs.getTabAt(0).select();
+                    climbHashMap.put("Rung", "L");
+                }
                 updateXMLObjects();
             }
         });
