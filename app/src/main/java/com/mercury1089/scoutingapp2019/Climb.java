@@ -4,7 +4,9 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import java.util.LinkedHashMap;
@@ -82,6 +85,9 @@ public class Climb extends Fragment {
         climbedSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 climbHashMap.put("Climbed", isChecked ? "1" : "0");
+                //Default option for rung is LOW
+                if (isChecked)
+                    rungTabs.getTabAt(0).select();
                 updateXMLObjects();
             }
         });
@@ -89,22 +95,23 @@ public class Climb extends Fragment {
         rungTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                CharSequence text = tab.getText();
-                if ("LOW".equals(text)) {
+                String text = (String) tab.getText();
+                if (text.equals("LOW"))
                     climbHashMap.put("Rung", "L");
-
+                else if (text.equals("MID"))
                     climbHashMap.put("Rung", "M");
-                } else if ("MID".equals(text)) {
-                    climbHashMap.put("Rung", "M");
-                }
+                else if (text.equals("HIGH"))
+                    climbHashMap.put("Rung", "H");
+                else if (text.equals("TRAVERSAL"))
+                    climbHashMap.put("Rung", "T");
+                Log.d("RUNG", climbHashMap.get("Rung"));
 
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
+                climbHashMap.put("Rung", "0");
+                Log.d("RUNG", climbHashMap.get("Rung"));
             }
-
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
@@ -152,20 +159,31 @@ public class Climb extends Fragment {
         });
     }
 
+    private void rungTabsEnabledState(boolean enable) {
+        if (!enable)
+            climbHashMap.put("Rung", "0");
+        LinearLayout tabStrip = ((LinearLayout)rungTabs.getChildAt(0));
+        tabStrip.setEnabled(enable);
+        for(int i = 0; i < tabStrip.getChildCount(); i++) {
+            tabStrip.getChildAt(i).setEnabled(enable);
+            tabStrip.getChildAt(i).setClickable(enable);
+        }
+        Log.d("RUNG", climbHashMap.get("Rung"));
+    }
+
     private void climbButtonsEnabledState(boolean enable) {
         climbRungDirections.setEnabled(enable);
-        rungTabs.setEnabled(enable);
-
+        rungTabsEnabledState(enable);
     }
 
     private void updateXMLObjects() {
-        if (climbHashMap.get("Climbed").equals("1")) {
-            climbedSwitch.setChecked(true);
-            climbButtonsEnabledState(true);
-        } else {
-            climbHashMap.put("Rung", "0"); //Resets "rung" value to default (look at HashMapMananger for details)
+        if (climbHashMap.get("Climbed").equals("0")) {
+            climbHashMap.put("Rung", "0");
             climbedSwitch.setChecked(false);
             climbButtonsEnabledState(false);
+        } else if (climbHashMap.get("Climbed").equals("1")) {
+            climbedSwitch.setChecked(true);
+            climbButtonsEnabledState(true);
         }
 
     }
