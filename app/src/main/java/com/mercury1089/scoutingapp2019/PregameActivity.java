@@ -177,6 +177,8 @@ public class PregameActivity extends AppCompatActivity {
         //starting listener to check the status of the switch
         noShowSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    setupHashMap.put("PreloadCargo", "0");
                 preloadSwitch.setEnabled(!isChecked);
                 setupHashMap.put("NoShow", isChecked ? "1" : "0");
                 updateXMLObjects(false);
