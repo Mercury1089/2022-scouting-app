@@ -153,6 +153,6 @@
         <string name="NextMatch">SET UP NEXT MATCH</string>
     <string name="ToggleInstructions">Tap on the toggle to record if the options are true (on) or false (off).</string>
         <string name="PreloadedCargo">Preloaded Cargo</string>
-        <string name="UpperHub">Upper Hub</string>
-        <string name="LowerHub">Lower Hub</string>
+        <string name="UpperHub">UPPER HUB</string>
+        <string name="LowerHub">LOWER HUB</string>
 </resources>
