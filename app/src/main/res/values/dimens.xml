@@ -1,10 +1,10 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="header_text_size">28sp</dimen>
+    <dimen name="header_text_size">26sp</dimen>
     <dimen name="subheader_text_size">20px</dimen>
     <dimen name="label_text_size">16sp</dimen>
     <dimen name="button_text_size">16sp</dimen>
-    <dimen name="instruction_text_size">17sp</dimen>
+    <dimen name="instruction_text_size">14sp</dimen>
     <dimen name="speech_bubble_length">320dp</dimen>
     <dimen name="tail_width">24dp</dimen>
     <dimen name="tail_height">12dp</dimen>
