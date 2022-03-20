@@ -73,6 +73,7 @@ public class MatchActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                HashMapManager.setDefaultValues(HashMapManager.HASH.SETUP);
                 HashMapManager.setDefaultValues(HashMapManager.HASH.AUTON);
                 HashMapManager.setDefaultValues(HashMapManager.HASH.TELEOP);
                 HashMapManager.setDefaultValues(HashMapManager.HASH.CLIMB);
