@@ -403,6 +403,15 @@ public class PregameActivity extends AppCompatActivity {
                         return;
                     } else if(settingsHashMap.get("NothingToSeeHere").equals("1")) {
                         rooster.start();
+                    } else if (teamNumberInput.getText().toString().equals(firstAlliancePartnerInput.getText().toString()) || teamNumberInput.getText().toString().equals(secondAlliancePartnerInput.getText().toString())) {
+                        Toast.makeText(PregameActivity.this, "A team cannot be its own partner.", Toast.LENGTH_SHORT).show();
+                        setupHashMap.put("TeamNumber", "");
+                        setupHashMap.put("AlliancePartner1", "");
+                        setupHashMap.put("AlliancePartner2", "");
+                        teamNumberInput.requestFocus();
+                        updateXMLObjects(true);
+                        return;
+
                     }
                     Intent intent = new Intent(PregameActivity.this, MatchActivity.class);
                     startActivity(intent);
