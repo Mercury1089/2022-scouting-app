@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IDClimbRungDirections"
         app:tabBackground="@drawable/button_states"
+        app:tabIndicatorColor="@color/rust"
         app:tabTextColor="@color/ice">
 
 
