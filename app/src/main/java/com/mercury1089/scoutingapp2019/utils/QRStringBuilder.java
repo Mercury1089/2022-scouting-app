@@ -16,7 +16,7 @@ public class QRStringBuilder {
         LinkedHashMap teleop = HashMapManager.getTeleopHashMap();
         LinkedHashMap climb = HashMapManager.getClimbHashMap();
 
-        //Setup Data
+        // Setup Data
         QRString.append(setup.get("ScouterName")).append(",");
         QRString.append(setup.get("TeamNumber")).append(",");
         QRString.append(setup.get("MatchNumber")).append(",");
@@ -30,15 +30,14 @@ public class QRStringBuilder {
         QRString.append(climb.get("Rung")).append(",");
 
 
-        //Event Data
-        //Auton
+        // Event Data
+        // Auton
         QRString.append("Auton").append(",");
         QRString.append(auton.get("ScoredUpper")).append(",");
         QRString.append(auton.get("ScoredLower")).append(",");
         QRString.append(auton.get("MissedUpper")).append(",");
         QRString.append(auton.get("MissedLower")).append(",");
-        QRString.append(auton.get("NumberDropped")).append(",");
-        //Teleop
+        // Teleop
         QRString.append("Teleop").append(",");
         QRString.append(teleop.get("ScoredUpper")).append(",");
         QRString.append(teleop.get("ScoredLower")).append(",");

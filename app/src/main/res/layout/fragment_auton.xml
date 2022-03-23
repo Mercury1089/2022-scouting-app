@@ -266,7 +266,7 @@
         android:id="@+id/TeleopWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="696dp"
+        android:layout_marginTop="684dp"
         android:background="@drawable/teleop_warning"
         android:fontFamily="@font/open_sans"
         android:gravity="center"
@@ -275,7 +275,7 @@
         android:textSize="@dimen/label_text_size"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -328,7 +328,7 @@
         android:textColor="@drawable/header_states"
         android:textSize="@dimen/header_text_size"
         app:layout_constraintStart_toStartOf="@+id/IDPossession"
-        app:layout_constraintTop_toBottomOf="@+id/DroppedToggle" />
+        app:layout_constraintTop_toBottomOf="@+id/PickedUpToggle" />
 
     <TextView
         android:id="@+id/IDScoringDirections"
@@ -369,35 +369,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/IDPickedUp"
         app:layout_constraintStart_toEndOf="@+id/PickedUpToggle"
         app:layout_constraintTop_toTopOf="@+id/IDPickedUp" />
-
-    <TextView
-        android:id="@+id/DroppedCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:gravity="center"
-        android:paddingStart="5dp"
-        android:paddingTop="4dp"
-        android:paddingEnd="5dp"
-        android:paddingBottom="4dp"
-        android:text="@string/DefaultValue"
-        android:textColor="@drawable/text_states"
-        android:textSize="@dimen/instruction_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/IDDropped"
-        app:layout_constraintStart_toEndOf="@+id/DroppedToggle"
-        app:layout_constraintTop_toTopOf="@+id/IDDropped" />
-
-    <TextView
-        android:id="@+id/IDDropped"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/Dropped"
-        android:textColor="@drawable/text_states"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintStart_toStartOf="@+id/IDPossession"
-        app:layout_constraintTop_toBottomOf="@+id/IDPickedUp" />
 
     <TextView
         android:id="@+id/AutonSeconds"
@@ -448,50 +419,17 @@
         <!-- android:button="@drawable/button_rounded_corners" -->
     </RadioGroup>
 
-    <RadioGroup
-        android:id="@+id/DroppedToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:divider="?android:attr/dividerHorizontal"
-        android:orientation="horizontal"
-        android:showDividers="middle"
-        app:layout_constraintBottom_toBottomOf="@+id/IDDropped"
-        app:layout_constraintStart_toStartOf="@+id/PickedUpToggle"
-        app:layout_constraintTop_toTopOf="@+id/IDDropped">
-
-        <ImageButton
-            android:id="@+id/NotDroppedButton"
-            android:layout_width="@dimen/square_toggle_length"
-            android:layout_height="@dimen/square_toggle_length"
-            android:background="@drawable/toggle_left_states"
-            android:fontFamily="@font/open_sans"
-            android:gravity="center"
-            android:src="@drawable/minus_states"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/DroppedButton"
-            android:layout_width="@dimen/square_toggle_length"
-            android:layout_height="@dimen/square_toggle_length"
-            android:background="@drawable/toggle_right_states"
-            android:fontFamily="@font/open_sans"
-            android:gravity="center"
-            android:src="@drawable/plus_states"
-            tools:ignore="ContentDescription" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/IDMisc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/futura_medium_condensed_bt"
         android:text="@string/MiscTitle"
         android:textColor="@drawable/header_states"
         android:textSize="@dimen/header_text_size"
         app:layout_constraintStart_toStartOf="@+id/IDPossession"
-        app:layout_constraintTop_toBottomOf="@+id/topEdgeBar" />
+        app:layout_constraintTop_toBottomOf="@+id/MissedUpperToggle" />
 
     <TextView
         android:id="@+id/IDMiscDirections"

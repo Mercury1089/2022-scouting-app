@@ -290,7 +290,6 @@ public class HashMapManager{
                 //include all the items that will be in the autonHashMap
                 autonHashMap.put("HashMapName", "Auton");
                 autonHashMap.put("NumberPickedUp", "0");
-                autonHashMap.put("NumberDropped",  "0");
                 autonHashMap.put("ScoredUpper", "0");
                 autonHashMap.put("ScoredLower", "0");
                 autonHashMap.put("MissedUpper", "0");

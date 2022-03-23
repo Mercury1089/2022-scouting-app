@@ -34,8 +34,6 @@ public class Auton extends Fragment {
     //Buttons
     private ImageButton pickedUpIncrementButton;
     private ImageButton pickedUpDecrementButton;
-    private ImageButton droppedIncrementButton;
-    private ImageButton droppedDecrementButton;
     private ImageButton scoredUpperButton;
     private ImageButton notScoredUpperButton;
     private ImageButton missedUpperButton;
@@ -59,8 +57,6 @@ public class Auton extends Fragment {
     private TextView possessionDescription;
     private TextView pickedUpID;
     private TextView pickedUpCounter;
-    private TextView droppedID;
-    private TextView droppedCounter;
 
     private TextView scoringID;
     private TextView scoringDescription;
@@ -135,11 +131,6 @@ public class Auton extends Fragment {
         pickedUpIncrementButton = getView().findViewById(R.id.PickedUpButton);
         pickedUpDecrementButton = getView().findViewById(R.id.NotPickedUpButton);
         pickedUpCounter = getView().findViewById(R.id.PickedUpCounter);
-
-        droppedID = getView().findViewById(R.id.IDDropped);
-        droppedIncrementButton = getView().findViewById(R.id.DroppedButton);
-        droppedDecrementButton = getView().findViewById(R.id.NotDroppedButton);
-        droppedCounter = getView().findViewById(R.id.DroppedCounter);
 
         scoringID = getView().findViewById(R.id.IDScoring);
         scoringDescription = getView().findViewById(R.id.IDScoringDirections);
@@ -353,25 +344,6 @@ public class Auton extends Fragment {
             }
         });
 
-        droppedIncrementButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-                int currentCount = Integer.parseInt((String)droppedCounter.getText());
-                currentCount++;
-                autonHashMap.put("NumberDropped", String.valueOf(currentCount));
-                updateXMLObjects();
-            }
-        });
-
-        droppedDecrementButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-                int currentCount = Integer.parseInt((String)droppedCounter.getText());
-                if(currentCount > 0)
-                    currentCount--;
-                autonHashMap.put("NumberDropped", String.valueOf(currentCount));
-                updateXMLObjects();
-            }
-        });
-
         scoredUpperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -486,11 +458,6 @@ public class Auton extends Fragment {
         pickedUpIncrementButton.setEnabled(enable);
         pickedUpDecrementButton.setEnabled(enable);
         pickedUpCounter.setEnabled(enable);
-
-        droppedID.setEnabled(enable);
-        droppedIncrementButton.setEnabled(enable);
-        droppedDecrementButton.setEnabled(enable);
-        droppedCounter.setEnabled(enable);
     }
 
     private void scoringButtonsEnabledState(boolean enable){
@@ -544,7 +511,6 @@ public class Auton extends Fragment {
         missedUpperCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("MissedUpper"), 2));
         missedLowerCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("MissedLower"), 2));
         pickedUpCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberPickedUp"), 2));
-        droppedCounter.setText(GenUtils.padLeftZeros(autonHashMap.get("NumberDropped"), 2));
         taxiSwitch.setChecked(autonHashMap.get("Taxi").equals("1"));
 
         if(setupHashMap.get("FellOver").equals("1")) {
@@ -553,15 +519,11 @@ public class Auton extends Fragment {
         } else {
             fellOverSwitch.setChecked(false);
             allButtonsEnabledState(true);
-            //Disables decrement buttons if counter is at 0
+            // Disables decrement buttons if counter is at 0
             if(Integer.parseInt((String)pickedUpCounter.getText()) <= 0)
                 pickedUpDecrementButton.setEnabled(false);
             else
                 pickedUpDecrementButton.setEnabled(true);
-            if(Integer.parseInt((String)droppedCounter.getText()) <= 0)
-                droppedDecrementButton.setEnabled(false);
-            else
-                droppedDecrementButton.setEnabled(true);
             if (Integer.parseInt((String)scoredUpperCounter.getText()) <= 0)
                 notScoredUpperButton.setEnabled(false);
             else
@@ -593,7 +555,7 @@ public class Auton extends Fragment {
                 setupHashMap = HashMapManager.getSetupHashMap();
                 autonHashMap = HashMapManager.getAutonHashMap();
                 updateXMLObjects();
-                //set all objects in the fragment to their values from the HashMaps
+                // Set all objects in the fragment to their values from the HashMaps
             } else {
                 if(teleopButtonAnimation != null) {
                     teleopButtonAnimation.cancel();
