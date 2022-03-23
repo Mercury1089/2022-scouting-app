@@ -300,7 +300,6 @@ public class HashMapManager{
                 //include all the items that will be in the teleopHashMap
                 teleopHashMap.put("HashMapName", "Teleop");
                 teleopHashMap.put("NumberPickedUp", "0");
-                teleopHashMap.put("NumberDropped",  "0");
                 teleopHashMap.put("ScoredUpper", "0");
                 teleopHashMap.put("ScoredLower", "0");
                 teleopHashMap.put("MissedUpper", "0");

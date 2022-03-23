@@ -43,7 +43,6 @@ public class QRStringBuilder {
         QRString.append(teleop.get("ScoredLower")).append(",");
         QRString.append(teleop.get("MissedUpper")).append(",");
         QRString.append(teleop.get("MissedLower")).append(",");
-        QRString.append(teleop.get("NumberDropped")).append(",");
     }
 
     public static String getQRString(){

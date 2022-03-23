@@ -28,8 +28,6 @@ public class Teleop extends Fragment {
     //RadioButtons
     private ImageButton pickedUpIncrementButton;
     private ImageButton pickedUpDecrementButton;
-    private ImageButton droppedIncrementButton;
-    private ImageButton droppedDecrementButton;
     private ImageButton scoredUpperButton;
     private ImageButton notScoredUpperButton;
     private ImageButton scoredLowerButton;
@@ -48,8 +46,6 @@ public class Teleop extends Fragment {
     private TextView possessionDescription;
     private TextView pickedUpID;
     private TextView pickedUpCounter;
-    private TextView droppedID;
-    private TextView droppedCounter;
     private TextView IDUpperHub;
     private TextView IDLowerHub;
     private TextView IDScoredUpper;
@@ -98,11 +94,6 @@ public class Teleop extends Fragment {
         pickedUpIncrementButton = getView().findViewById(R.id.PickedUpButton);
         pickedUpDecrementButton = getView().findViewById(R.id.NotPickedUpButton);
         pickedUpCounter = getView().findViewById(R.id.PickedUpCounter);
-
-        droppedID = getView().findViewById(R.id.IDDropped);
-        droppedIncrementButton = getView().findViewById(R.id.DroppedButton);
-        droppedDecrementButton = getView().findViewById(R.id.NotDroppedButton);
-        droppedCounter = getView().findViewById(R.id.DroppedCounter);
 
         scoringID = getView().findViewById(R.id.IDScoring);
         scoringDescription = getView().findViewById(R.id.IDScoringDirections);
@@ -154,25 +145,6 @@ public class Teleop extends Fragment {
                 if(currentCount > 0)
                     currentCount--;
                 teleopHashMap.put("NumberPickedUp", String.valueOf(currentCount));
-                updateXMLObjects();
-            }
-        });
-
-        droppedIncrementButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-                int currentCount = Integer.parseInt((String)droppedCounter.getText());
-                currentCount++;
-                teleopHashMap.put("NumberDropped", String.valueOf(currentCount));
-                updateXMLObjects();
-            }
-        });
-
-        droppedDecrementButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-                int currentCount = Integer.parseInt((String)droppedCounter.getText());
-                if(currentCount > 0)
-                    currentCount--;
-                teleopHashMap.put("NumberDropped", String.valueOf(currentCount));
                 updateXMLObjects();
             }
         });
@@ -284,11 +256,6 @@ public class Teleop extends Fragment {
         pickedUpIncrementButton.setEnabled(enable);
         pickedUpDecrementButton.setEnabled(enable);
         pickedUpCounter.setEnabled(enable);
-
-        droppedID.setEnabled(enable);
-        droppedIncrementButton.setEnabled(enable);
-        droppedDecrementButton.setEnabled(enable);
-        droppedCounter.setEnabled(enable);
     }
 
     private void scoringButtonsEnabledState(boolean enable){
@@ -337,7 +304,6 @@ public class Teleop extends Fragment {
         scoredLowerCounter.setText(GenUtils.padLeftZeros(teleopHashMap.get("ScoredLower"), 3));
         missedLowerCounter.setText(GenUtils.padLeftZeros(teleopHashMap.get("MissedLower"), 3));
         pickedUpCounter.setText(GenUtils.padLeftZeros(teleopHashMap.get("NumberPickedUp"), 3));
-        droppedCounter.setText(GenUtils.padLeftZeros(teleopHashMap.get("NumberDropped"), 3));
 
         if(setupHashMap.get("FellOver").equals("1")) {
             fellOverSwitch.setChecked(true);
@@ -349,10 +315,6 @@ public class Teleop extends Fragment {
                 pickedUpDecrementButton.setEnabled(false);
             else
                 pickedUpDecrementButton.setEnabled(true);
-            if(Integer.parseInt((String)droppedCounter.getText()) == 0)
-                droppedDecrementButton.setEnabled(false);
-            else
-                droppedDecrementButton.setEnabled(true);
             if (Integer.parseInt((String)scoredUpperCounter.getText()) <= 0)
                 notScoredUpperButton.setEnabled(false);
             else

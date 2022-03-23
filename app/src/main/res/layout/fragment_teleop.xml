@@ -315,13 +315,13 @@
         android:text="@string/ScoringTitle"
         android:textColor="@drawable/header_states"
         android:textSize="@dimen/header_text_size"
-        app:layout_constraintStart_toStartOf="@+id/IDDropped"
-        app:layout_constraintTop_toBottomOf="@+id/DroppedToggle" />
+        app:layout_constraintStart_toStartOf="@+id/IDPossession"
+        app:layout_constraintTop_toBottomOf="@+id/PickedUpToggle" />
 
     <TextView
         android:id="@+id/IDPossessionDirections"
-        android:layout_width="554dp"
-        android:layout_height="57dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/open_sans_italic"
         android:text="@string/PossessionDirections"
         android:textColor="@drawable/text_states"
@@ -367,33 +367,6 @@
         app:layout_constraintStart_toEndOf="@+id/PickedUpToggle"
         app:layout_constraintTop_toTopOf="@+id/IDPickedUp" />
 
-    <TextView
-        android:id="@+id/DroppedCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:paddingStart="5dp"
-        android:paddingTop="4dp"
-        android:paddingEnd="5dp"
-        android:paddingBottom="4dp"
-        android:text="@string/DefaultValue"
-        android:textColor="@drawable/text_states"
-        android:textSize="@dimen/instruction_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/IDDropped"
-        app:layout_constraintStart_toEndOf="@+id/PickedUpToggle"
-        app:layout_constraintTop_toTopOf="@+id/IDDropped" />
-
-    <TextView
-        android:id="@+id/IDDropped"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/Dropped"
-        android:textColor="@drawable/text_states"
-        android:textSize="@dimen/label_text_size"
-        app:layout_constraintStart_toStartOf="@+id/IDPickedUp"
-        app:layout_constraintTop_toBottomOf="@+id/IDPickedUp" />
-
     <RadioGroup
         android:id="@+id/PickedUpToggle"
         android:layout_width="wrap_content"
@@ -418,37 +391,6 @@
 
         <ImageButton
             android:id="@+id/PickedUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/toggle_right_states"
-            android:gravity="center"
-            android:src="@drawable/plus_states"
-            tools:ignore="ContentDescription" />
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/DroppedToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:divider="?android:attr/dividerHorizontal"
-        android:orientation="horizontal"
-        android:showDividers="middle"
-        app:layout_constraintBottom_toBottomOf="@+id/IDDropped"
-        app:layout_constraintEnd_toEndOf="@+id/PickedUpToggle"
-        app:layout_constraintStart_toStartOf="@+id/PickedUpToggle"
-        app:layout_constraintTop_toTopOf="@+id/IDDropped">
-
-        <ImageButton
-            android:id="@+id/NotDroppedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/toggle_left_states"
-            android:gravity="center"
-            android:src="@drawable/minus_states"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/DroppedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/toggle_right_states"
@@ -491,7 +433,7 @@
         android:text="@string/MiscTitle"
         android:textColor="@drawable/header_states"
         android:textSize="@dimen/header_text_size"
-        app:layout_constraintStart_toStartOf="@+id/IDMissedUpper"
+        app:layout_constraintStart_toStartOf="@+id/IDScoring"
         app:layout_constraintTop_toBottomOf="@+id/MissedUpperToggle" />
 
     <Switch
