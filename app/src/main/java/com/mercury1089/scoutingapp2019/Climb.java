@@ -106,13 +106,10 @@ public class Climb extends Fragment {
                     climbHashMap.put("Rung", "H");
                 else if (text.equals("TRAVERSAL"))
                     climbHashMap.put("Rung", "T");
-                Log.d("RUNG", climbHashMap.get("Rung"));
-
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 climbHashMap.put("Rung", "0");
-                Log.d("RUNG", climbHashMap.get("Rung"));
             }
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
@@ -170,7 +167,6 @@ public class Climb extends Fragment {
             tabStrip.getChildAt(i).setEnabled(enable);
             tabStrip.getChildAt(i).setClickable(enable);
         }
-        Log.d("RUNG", climbHashMap.get("Rung"));
     }
 
     private void climbButtonsEnabledState(boolean enable) {
