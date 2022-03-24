@@ -23,6 +23,7 @@ public class QRStringBuilder {
         QRString.append(setup.get("AlliancePartner1")).append(",");
         QRString.append(setup.get("AlliancePartner2")).append(",");
         QRString.append(setup.get("AllianceColor")).append(",");
+        QRString.append(setup.get("PreloadCargo").equals("1") ? "Y" : "N").append(",");
         QRString.append(setup.get("NoShow").equals("1") ? "Y" : "N").append(",");
         QRString.append(setup.get("FellOver").equals("1") ? "Y" : "N").append(",");
 

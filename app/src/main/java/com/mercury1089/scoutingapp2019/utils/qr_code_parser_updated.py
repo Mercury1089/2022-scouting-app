@@ -14,8 +14,8 @@ def show_webcam():
     while True:
         ret_val, img = cam.read()
         cv2.imshow('1089 Scouting Scanner', img)
-        if cv2.waitKey(1) == 27: 
-            break  # esc to quit
+        if cv2.waitKey(1) == 27:
+            break  # press esc to quit
         cv2.imwrite(file, img)
         qr = qrtools.QR()
         qr.decode(file) 
