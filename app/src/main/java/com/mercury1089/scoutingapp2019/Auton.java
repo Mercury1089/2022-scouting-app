@@ -437,8 +437,6 @@ public class Auton extends Fragment {
 
         fellOverSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    autonHashMap.put("Taxi", "0");
                 setupHashMap.put("FellOver", isChecked ? "1" : "0");
                 updateXMLObjects();
             }
