@@ -170,11 +170,18 @@ public class Climb extends Fragment {
     }
 
     private void climbButtonsEnabledState(boolean enable) {
+        climbedID.setEnabled(enable);
         climbRungDirections.setEnabled(enable);
+        climbedSwitch.setEnabled(enable);
         rungTabsEnabledState(enable);
     }
 
     private void updateXMLObjects() {
+        if (setupHashMap.get("FellOver").equals("1"))
+            climbButtonsEnabledState(false);
+        else
+            climbButtonsEnabledState(true);
+
         if (climbHashMap.get("Climbed").equals("0")) {
             climbHashMap.put("Rung", "0");
             climbedSwitch.setChecked(false);

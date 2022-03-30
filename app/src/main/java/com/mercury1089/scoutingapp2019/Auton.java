@@ -515,9 +515,13 @@ public class Auton extends Fragment {
 
         if(setupHashMap.get("FellOver").equals("1")) {
             fellOverSwitch.setChecked(true);
+            nextButton.setPadding(150, 0, 150, 0);
+            nextButton.setText(R.string.GenerateQRCode);
             allButtonsEnabledState(false);
         } else {
             fellOverSwitch.setChecked(false);
+            nextButton.setPadding(150, 0, 185, 0);
+            nextButton.setText(R.string.TeleopNext);
             allButtonsEnabledState(true);
             // Disables decrement buttons if counter is at 0
             if(Integer.parseInt((String)pickedUpCounter.getText()) <= 0)
