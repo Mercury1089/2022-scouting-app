@@ -64,6 +64,8 @@ public class Teleop extends Fragment {
 
     private TextView fellOverID;
 
+    private Boolean isQRButton;
+
     //other variables
     private ConstraintLayout constraintLayout;
     private int totalScored;
@@ -286,7 +288,7 @@ public class Teleop extends Fragment {
     private void miscButtonsEnabledState(boolean enable){
         miscID.setEnabled(enable);
         miscDescription.setEnabled(enable);
-        //Fell Over switch is not included in case user accidentally clicks it
+        fellOverSwitch.setEnabled(enable);
         fellOverID.setEnabled(enable);
         nextButton.setEnabled(enable);
     }
@@ -294,7 +296,11 @@ public class Teleop extends Fragment {
     private void allButtonsEnabledState(boolean enable){
         possessionButtonsEnabledState(enable);
         scoringButtonsEnabledState(enable);
-        miscButtonsEnabledState(enable);
+
+        miscID.setEnabled(enable);
+        miscDescription.setEnabled(enable);
+
+
     }
 
     private void updateXMLObjects(){
@@ -306,10 +312,17 @@ public class Teleop extends Fragment {
 
         if(setupHashMap.get("FellOver").equals("1")) {
             fellOverSwitch.setChecked(true);
+            nextButton.setPadding(150, 0, 185, 0);
+            nextButton.setText(R.string.GenerateQRCode);
+            isQRButton = true;
             allButtonsEnabledState(false);
         } else {
             fellOverSwitch.setChecked(false);
+            nextButton.setPadding(150, 0, 150, 0);
+            nextButton.setText(R.string.ClimbNext);
+            isQRButton = false;
             allButtonsEnabledState(true);
+
             if(Integer.parseInt((String)pickedUpCounter.getText()) == 0)
                 pickedUpDecrementButton.setEnabled(false);
             else
