@@ -108,9 +108,7 @@ public class Climb extends Fragment {
                     climbHashMap.put("Rung", "T");
             }
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                climbHashMap.put("Rung", "0");
-            }
+            public void onTabUnselected(TabLayout.Tab tab) { climbHashMap.put("Rung", "0"); }
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
@@ -170,17 +168,26 @@ public class Climb extends Fragment {
     }
 
     private void climbButtonsEnabledState(boolean enable) {
-        climbedID.setEnabled(enable);
         climbRungDirections.setEnabled(enable);
-        climbedSwitch.setEnabled(enable);
+        //Always want the climbed switch and "climb" text next to switch to be enabled unless fell over/died is checked
         rungTabsEnabledState(enable);
     }
 
+    private void climbedSwitchEnabledState(boolean enable) {
+        climbedSwitch.setEnabled(enable);
+        climbedID.setEnabled(enable);
+    }
+
     private void updateXMLObjects() {
-        if (setupHashMap.get("FellOver").equals("1"))
+        if (setupHashMap.get("FellOver").equals("1")) {
             climbButtonsEnabledState(false);
-        else
+            climbedSwitch.setChecked(false);
+            climbHashMap.put("Rung", "0");
+            climbedSwitchEnabledState(false);
+        } else if (setupHashMap.get("FellOver").equals("0")) {
             climbButtonsEnabledState(true);
+            climbedSwitchEnabledState(true);
+        }
 
         if (climbHashMap.get("Climbed").equals("0")) {
             climbHashMap.put("Rung", "0");
