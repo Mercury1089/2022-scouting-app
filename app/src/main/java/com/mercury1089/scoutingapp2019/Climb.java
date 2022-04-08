@@ -174,6 +174,11 @@ public class Climb extends Fragment {
     }
 
     private void climbedSwitchEnabledState(boolean enable) {
+        //"Climbing/Traversing" title
+        endgameID.setEnabled(enable);
+        //Directions below title
+        endgameDirections.setEnabled(enable);
+        //Switch
         climbedSwitch.setEnabled(enable);
         climbedID.setEnabled(enable);
     }
