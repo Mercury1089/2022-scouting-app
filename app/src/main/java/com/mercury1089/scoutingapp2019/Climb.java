@@ -3,6 +3,7 @@ package com.mercury1089.scoutingapp2019;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -80,6 +81,8 @@ public class Climb extends Fragment {
 
         generateQRButton = getView().findViewById(R.id.GenerateQRButton);
         rungTabs = getView().findViewById(R.id.rungTabs);
+        //Removes tab indicator because climb switch starts out as null
+        rungTabs.setSelectedTabIndicator(null);
 
         //set listeners for buttons
         climbedSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
@@ -87,8 +90,14 @@ public class Climb extends Fragment {
                 climbHashMap.put("Climbed", isChecked ? "1" : "0");
                 //Default option for rung is LOW
                 if (isChecked) {
+                    //Sets tab indicator to built-in default
+                    rungTabs.setSelectedTabIndicator(R.drawable.mtrl_tabs_default_indicator);
                     rungTabs.getTabAt(0).select();
                     climbHashMap.put("Rung", "L");
+                } else {
+                    //Removes tab indicator
+                    rungTabs.setSelectedTabIndicator(null);
+
                 }
                 updateXMLObjects();
             }
