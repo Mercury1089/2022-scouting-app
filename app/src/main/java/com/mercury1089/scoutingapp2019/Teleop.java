@@ -66,11 +66,6 @@ public class Teleop extends Fragment {
 
     private Boolean isQRButton;
 
-    //other variables
-    private ConstraintLayout constraintLayout;
-    private int totalScored;
-    private int totalMissed;
-
     public static Teleop newInstance() {
         Teleop fragment = new Teleop();
         Bundle args = new Bundle();
@@ -284,14 +279,6 @@ public class Teleop extends Fragment {
         notMissedLowerButton.setEnabled(enable);
     }
 
-
-    private void miscButtonsEnabledState(boolean enable){
-        miscID.setEnabled(enable);
-        miscDescription.setEnabled(enable);
-        fellOverSwitch.setEnabled(enable);
-        fellOverID.setEnabled(enable);
-        nextButton.setEnabled(enable);
-    }
 
     private void allButtonsEnabledState(boolean enable){
         possessionButtonsEnabledState(enable);
