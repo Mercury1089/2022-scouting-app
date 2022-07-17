@@ -42,6 +42,7 @@ public class HashMapManager{
      *
      * Used to get the setttingsHashMap
      * Call when an activity starts and assign to global variable
+     * @return  the settingsHashMap
      *
      */
     public static LinkedHashMap<String, String> getSettingsHashMap(){
@@ -52,6 +53,7 @@ public class HashMapManager{
     *
     * Used to get the setupHashMap
     * Call when an activity starts and assign to global variable
+     * @return  the setupHashMap
     *
      */
     public static LinkedHashMap<String, String> getSetupHashMap(){
@@ -62,6 +64,7 @@ public class HashMapManager{
      *
      * Used to get the autonHashMap
      * Call when an activity starts and assign to global variable
+     * @return  the autonHashMap
      *
      */
     public static LinkedHashMap<String, String> getAutonHashMap(){
@@ -72,6 +75,7 @@ public class HashMapManager{
      *
      * Used to get the teleopHashMap
      * Call when an activity starts and assign to global variable
+     * @return the teleopHashMap
      *
      */
     public static LinkedHashMap<String, String> getTeleopHashMap(){
@@ -82,6 +86,7 @@ public class HashMapManager{
      *
      * Used to get the climbHashMap
      * Call when an activity starts and assign to global variable
+     * @return the climbHashMap
      *
      */
     public static LinkedHashMap<String, String> getClimbHashMap(){
@@ -92,6 +97,7 @@ public class HashMapManager{
      *
      * Used to set the app wide settingsHashMap
      * Call before leaving an activity to update the app wide settingsHashMap
+     * @param settingsData  The data to append to settingsHashMap
      *
      */
     public static void putSettingsHashMap(LinkedHashMap<String, String> settingsData){
@@ -104,6 +110,7 @@ public class HashMapManager{
     *
     * Used to set the app wide setupHashMap
     * Call before leaving an activity to update the app wide setupHashMap
+     * @param setupData The data to be put in the setupHashMap
     *
      */
     public static void putSetupHashMap(LinkedHashMap<String, String> setupData){
@@ -117,6 +124,7 @@ public class HashMapManager{
      *
      * Used to set the app wide autonHashMap
      * Call before leaving an activity to update the app wide autonHashMap
+     * @param autonData the data to be put in the autonHashMap
      *
      */
     public static void putAutonHashMap(LinkedHashMap<String, String> autonData){
@@ -129,6 +137,7 @@ public class HashMapManager{
      *
      * Used to set the app wide teleopHashMap
      * Call before leaving an activity to update the app wide teleopHashMap
+     * @param teleopData    the data to be put in the teleopHashMap
      *
      */
     public static void putTeleopHashMap(LinkedHashMap<String, String> teleopData){
@@ -139,8 +148,9 @@ public class HashMapManager{
 
     /**
      *
-     * Used to set the app wide climbHashMap
+     * <p>Used to set the app wide climbHashMap</p>
      * Call before leaving an activity to update the app wide climbHashMap
+     * @param climbData the data to be put in the climbHashMap
      *
      */
     public static void putClimbHashMap(LinkedHashMap<String, String> climbData){
@@ -150,6 +160,11 @@ public class HashMapManager{
     }
 
     /**
+     *
+     * Adds a value to the list of values (also known as the "qr list").
+     * qrList values are part of the final CSV output, and later parsed to represent actual match data
+     * @param qrString the new value to be added to qrList
+     * @param context the app context (to be passed into {@link #outputQRList(String[], Context)}
      *
      */
     public static void appendQRList(String qrString, Context context){
@@ -163,6 +178,11 @@ public class HashMapManager{
     }
 
     /**
+     *
+     * <p>Reads values from QRData file and updates the qrList array accordingly</p>
+     * <p>Called after appending values to qrList</p>
+     * @param context App context required to access the device file system
+     * @return the qrList;
      *
      */
     public static String[] setupQRList(Context context){
@@ -195,6 +215,10 @@ public class HashMapManager{
 
     /**
      *
+     * Writes the qrList array contents to a "QRData" file
+     * @param qrList The array of data to be written
+     * @param context The app context required to access the file system
+     *
      */
     public static void outputQRList(String[] qrList, Context context){
         String filename = "QRData";
@@ -217,6 +241,12 @@ public class HashMapManager{
         }
     }
 
+
+    /**
+     * Gets the settings password from file
+     * @param context   App context requred to access device file systme
+     * @return  The settings password
+     */
     public static String[] pullSettingsPassword(Context context){
         String filename = "SettingsPassword";
         String password, usePassword;
@@ -239,6 +269,11 @@ public class HashMapManager{
         }
     }
 
+    /**
+     * Saves a new settings password to file
+     * @param passwordStuff A two element String array-- <br>"password" is the actual password string, <br>"usePassword" is "Y" or "N" depending on if password is REQUIRED
+     * @param context   App context needed to access device file system
+     */
     public static void saveSettingsPassword(String[] passwordStuff, Context context){
         String filename = "SettingsPassword";
         try {
@@ -264,6 +299,7 @@ public class HashMapManager{
     *
     * Used to reset all the setupHashMap values to their default values
     * Fill in default values to prevent null pointer exceptions
+     * @param map   The hashmap to be reset
     *
      */
     public static void setDefaultValues(HASH map){
@@ -320,6 +356,7 @@ public class HashMapManager{
     * Checks if the setupHashMap is empty or null
     * if it is null, it instantiates it and calls setDefaultValues()
     * if it is empty, it calls setDefaultValues()
+     * @param map   The map to be checked
     *
      */
 
